@@ -1,12 +1,3 @@
-/*
-Author: Michael Padilla
-Course: CSCI-136
-Instructor: Tong Yi
-Assignment: Lab1B
-*/
-
-//It finds the smaller of 3 integers
-
 #include <iostream>
 using namespace std;
 
