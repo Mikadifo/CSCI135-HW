@@ -4,6 +4,8 @@ Course: CSCI-136
 Instructor: Tong Yi
 Assignment: Lab1C
 
+*/
+/*
 This finds if the entered year is a leap year or a common year.
 */
 
