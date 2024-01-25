@@ -11,7 +11,7 @@ It finds the smaller of 3 integers
 using namespace std;
 
 int main() {
-    int number1, number2, number3;
+    int number1, number2, number3, smallest;
 
     cout << "Enter the first number: ";
     cin >> number1;
@@ -20,13 +20,10 @@ int main() {
     cout << "Enter the third number: ";
     cin >> number3;
 
-    if ((number1 < number2) && (number1 < number3)) {
-	cout << number1;
-    } else if ((number2 < number1) && (number2 < number3)) {
-	cout << number2;
-    } else {
-	cout << number3;
-    }
+    smallest = (number1 < number2) ? number1 : number2;
+    smallest = (smallest < number3) ? smallest : number3;
+
+    cout << "The smaller of the three is " << smallest << endl;
     
     return 0;
 }
