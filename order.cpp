@@ -21,9 +21,9 @@ int main() {
     cin >> number3;
 
     if ((number1 > number2) && (number2 > number3)) {
-	cout << "increasing";
-    } else if ((number1 < number2) && (number2 < number3)) {
 	cout << "decreasing";
+    } else if ((number1 < number2) && (number2 < number3)) {
+	cout << "increasing";
     } else {
 	cout << "neither";
     }
