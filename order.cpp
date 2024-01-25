@@ -23,7 +23,7 @@ int main() {
     if ((number1 > number2) && (number2 > number3)) {
 	cout << "increasing";
     } else if ((number1 < number2) && (number2 < number3)) {
-	cout << "increasing";
+	cout << "decreasing";
     } else {
 	cout << "neither";
     }
