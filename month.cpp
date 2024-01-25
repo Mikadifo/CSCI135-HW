@@ -3,7 +3,6 @@ Author: Michael Padilla
 Course: CSCI-136
 Instructor: Tong Yi
 Assignment: Lab1D
-
 */
 /*
 Prints the number of days in a given month
@@ -12,6 +11,9 @@ Prints the number of days in a given month
 #include <iostream>
 using namespace std;
 
+/*
+Returns true if a month is leap and false otherwise
+*/
 bool isLeap(int year) {
     if (year % 4 != 0) {
 	return false;
