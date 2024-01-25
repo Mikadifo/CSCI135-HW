@@ -34,9 +34,22 @@ int main() {
 
     if (month == 2) {
 	cout << (isLeap(year) ? 29 : 28)  << " days";
-    } else if (month % 2 != 0) {
-	cout << 31 << " days";
-    } else cout << 30 << " days";
+	return 0;
+    }
+
+    if (month <= 7) {
+	if (month % 2 != 0) {
+	    cout << 31 << " days";
+	} else {
+	    cout << 30 << " days";
+	}
+    } else {
+	if (month % 2 != 0) {
+	    cout << 30 << " days";
+	} else {
+	    cout << 31 << " days";
+	}
+    }
 
     return 0;
 }
