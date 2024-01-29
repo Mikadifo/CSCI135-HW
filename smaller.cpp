@@ -1,6 +1,6 @@
 /*
 Author: Michael Padilla
-Course: CSCI-136
+Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab1A
 
