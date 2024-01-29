@@ -13,13 +13,16 @@ using namespace std;
 
 int main() {
     int myData[10];
-    int cell, value;
+    int cell = 0;
+    int value = 1;
 
     for (int i = 0; i < 10; i ++) {
 	myData[i] = 1;
     }
 
     do {
+	myData[cell] = value;
+
 	for (int i = 0; i < 10; i ++) {
 	    cout << myData[i] << " ";
 	}
@@ -28,10 +31,7 @@ int main() {
 	cin >> cell;
 	cout << "Value input: ";
 	cin >> value;
-
-	myData[cell] = value;
-    } while (cell >= 0 && cell < 10);
-
+    } while (cell >= 0 && cell <= 9);
 
     cout << "Index out of range. Exit";
 
