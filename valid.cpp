@@ -16,7 +16,7 @@ int main() {
     do {
 	cout << "Enter a number between 0 and 100: ";
 	cin >> number;
-    } while(number < 0 || number > 100);
+    } while(number <= 0 || number >= 100);
 
     cout << "Number squared is " << number*number << endl;
 
