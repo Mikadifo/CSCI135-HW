@@ -18,7 +18,7 @@ int main() {
 	cin >> number;
     } while(number < 0 || number > 100);
 
-    cout << number*number;
+    cout << "Number squared is " << number*number << endl;
 
     return 0;
 }
