@@ -1,6 +1,6 @@
 /*
 Author: Michael Padilla
-Course: CSCI-136
+Course: CSCI-135
 Instructor: Tong Yi
 Assignment: E3.5
 
@@ -11,22 +11,22 @@ This asks for 3 numbers and print their order
 using namespace std;
 
 int main() {
-    int number1, number2, number3;
+  int number1, number2, number3;
 
-    cout << "Enter number1: ";
-    cin >> number1;
-    cout << "Enter number2: ";
-    cin >> number2;
-    cout << "Enter number3: ";
-    cin >> number3;
+  cout << "Enter number1: ";
+  cin >> number1;
+  cout << "Enter number2: ";
+  cin >> number2;
+  cout << "Enter number3: ";
+  cin >> number3;
 
-    if ((number1 > number2) && (number2 > number3)) {
-	cout << "decreasing";
-    } else if ((number1 < number2) && (number2 < number3)) {
-	cout << "increasing";
-    } else {
-	cout << "neither";
-    }
+  if ((number1 > number2) && (number2 > number3)) {
+    cout << "decreasing";
+  } else if ((number1 < number2) && (number2 < number3)) {
+    cout << "increasing";
+  } else {
+    cout << "neither";
+  }
 
-    return 0;
+  return 0;
 }
