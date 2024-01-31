@@ -8,6 +8,7 @@ Assignment: Lab 3 B
   This program prints the min and max in East basin in 2018
 */
 
+#include <algorithm>
 #include <climits>
 #include <cstdlib>
 #include <fstream>
@@ -29,16 +30,17 @@ int main() {
 
   getline(fin, junk);
 
-  int i = 0;
   while (fin >> date >> eastSt) {
     fin.ignore(INT_MAX, '\n');
     cout << eastSt << endl;
-    i++;
     eastStValues.push_back(eastSt);
   }
 
-  cout << i << endl;
-  cout << eastStValues.size() << endl;
+  cout << "Min: " << *min_element(eastStValues.begin(), eastStValues.end())
+       << endl;
+
+  cout << "Max: " << *max_element(eastStValues.begin(), eastStValues.end())
+       << endl;
 
   return 0;
 }
