@@ -13,6 +13,7 @@ Assignment: Lab 3 D
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
