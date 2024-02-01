@@ -13,6 +13,7 @@ using namespace std;
 
 int main() {
   int width, height;
+  bool isSpace = false;
 
   cout << "Enter width: ";
   cin >> width;
@@ -23,7 +24,10 @@ int main() {
 
   for (int i = 0; i < height; i++) {
     for (int j = 0; j < width; j++) {
+      cout << (isSpace ? " " : "*");
+      isSpace = !isSpace;
     }
+    cout << endl;
   }
 
   return 0;
