@@ -22,21 +22,18 @@ int main() {
 
   cout << "Shape:" << endl;
 
+  colRemaining = 0;
   for (int row = 1; row <= height; row++) {
     isColBlank = isRowBlank;
-    colRemaining = width;
     for (int col = 3; col <= width; col += 3) {
       cout << (isColBlank ? "   " : "***");
       isColBlank = !isColBlank;
-      colRemaining -= col;
+      colRemaining = col;
     }
     if (row % 3 == 0) {
       isRowBlank = !isRowBlank;
     }
-    if (colRemaining > 0) {
-      cout << (string(colRemaining, (isColBlank) ? ' ' : '*'));
-    }
-    cout << endl;
+    cout << (string(width - colRemaining, isColBlank ? ' ' : '*')) << endl;
   }
 
   return 0;
