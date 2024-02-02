@@ -9,11 +9,13 @@ Assignment: Lab 4 C
 */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
   int size, inSpaces, outSpaces;
-  bool isUpHalf = true;
+  string row;
+  vector<string> rows;
 
   cout << "Enter size: ";
   cin >> size;
@@ -21,23 +23,28 @@ int main() {
 
   cout << "Shape:" << endl;
 
-  for (int row = 0; row < size; row++) {
-    outSpaces = size - 2 - inSpaces;
+  while (inSpaces >= -1) {
+    row = "";
+    outSpaces = (size - 2 - inSpaces) / 2;
 
-    cout << std::string(outSpaces / 2, ' ');
-    cout << "*" << std::string(inSpaces, ' ') << "*";
-    cout << std::string(outSpaces / 2, ' ') << endl;
-
-    if (isUpHalf) {
-      inSpaces -= 2;
+    row += std::string(outSpaces, ' ');
+    if (inSpaces < 0) {
+      row += "*";
     } else {
-      inSpaces += 2;
+      row += "*" + std::string(inSpaces, ' ') + "*";
     }
+    row += std::string(outSpaces, ' ') + '\n';
 
-    if (inSpaces == -2) {
-      isUpHalf = false;
-      inSpaces = 0;
-    }
+    inSpaces -= 2;
+    rows.push_back(row);
+  }
+
+  for (string row : rows) {
+    cout << row;
+  }
+
+  for (int i = rows.size() - (size % 2 == 0 ? 1 : 2); i < rows.size(); i--) {
+    cout << rows[i];
   }
 
   return 0;
