@@ -25,7 +25,7 @@ int main() {
   for (int row = 1; row <= height; row++) {
     isColBlank = isRowBlank;
     colRemaining = width;
-    for (int col = 3; col < width; col += 3) {
+    for (int col = 3; col <= width; col += 3) {
       cout << (isColBlank ? "   " : "***");
       isColBlank = !isColBlank;
       colRemaining -= col;
