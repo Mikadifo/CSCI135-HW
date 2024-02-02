@@ -20,6 +20,8 @@ int main() {
   cout << "Enter height: ";
   cin >> height;
 
+  cout << "Shape:" << endl;
+
   for (int row = 1; row <= height; row++) {
     isColBlank = isRowBlank;
     for (int col = 3; col < width; col += 3) {
