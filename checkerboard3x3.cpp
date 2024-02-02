@@ -12,12 +12,29 @@ Assignment: Lab 4 G
 using namespace std;
 
 int main() {
-  int width, height;
+  int width, height, colRemaining;
+  bool isColBlank, isRowBlank = false;
 
   cout << "Enter width: ";
   cin >> width;
   cout << "Enter height: ";
   cin >> height;
+
+  for (int row = 1; row <= height; row++) {
+    isColBlank = isRowBlank;
+    for (int col = 3; col < width; col += 3) {
+      cout << (isColBlank ? "   " : "***");
+      isColBlank = !isColBlank;
+      colRemaining = col;
+    }
+    if (row % 3 == 0) {
+      isRowBlank = !isRowBlank;
+    }
+    if (colRemaining > 0) {
+      cout << (string(width - colRemaining, (isColBlank) ? ' ' : '*'));
+    }
+    cout << endl;
+  }
 
   return 0;
 }
