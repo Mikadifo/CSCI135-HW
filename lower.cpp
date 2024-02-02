@@ -18,6 +18,8 @@ int main() {
   cout << "Enter side length: ";
   cin >> length;
 
+  cout << "Shape:" << endl;
+
   for (int i = 1; i <= length; i++) {
     cout << std::string(i, '*') << endl;
   }
