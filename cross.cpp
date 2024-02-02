@@ -28,14 +28,15 @@ int main() {
     cout << "*" << std::string(inSpaces, ' ') << "*";
     cout << std::string(outSpaces / 2, ' ') << endl;
 
-    if (inSpaces == 0) {
-      isUpHalf = false;
-    }
-
     if (isUpHalf) {
       inSpaces -= 2;
     } else {
       inSpaces += 2;
+    }
+
+    if (inSpaces == -2) {
+      isUpHalf = false;
+      inSpaces = 0;
     }
   }
 
