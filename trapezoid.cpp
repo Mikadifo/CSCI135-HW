@@ -23,7 +23,7 @@ int main() {
 
   cout << "Shape:" << endl;
 
-  if (2 * height - 1 >= width) {
+  if (2 * (height - 1) >= width) {
     cout << "Impossible shape!";
     return 0;
   }
