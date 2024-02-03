@@ -5,7 +5,7 @@ Instructor: Tong Yi
 Assignment: Project 1 B
 */
 /*
- This program
+ This program reads a formula from a file and prints out the answer
 */
 
 #include <iostream>
