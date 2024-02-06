@@ -16,7 +16,7 @@ using namespace std;
 
 int main() {
   int OPERATORS[5] = {'+', '-', '*', '/', '%'};
-  int randomIndex = rand() % 6;
+  int randomIndex = rand() % 5;
   int firstNumber = rand() % 10;
   int secondNumber, result, userAnswer;
   char randomOperator = OPERATORS[randomIndex];
