@@ -23,7 +23,7 @@ int main() {
   vector<pair<string, float>> lines;
   string line, problem;
   float answer, userAnswer, percentage;
-  int questions = 0, correctQuestions;
+  int questions = 0, correctQuestions = 0;
   char grade;
 
   ifstream fin("problems.csv");
@@ -43,9 +43,9 @@ int main() {
 
   fin.close();
 
-  // shuffle(lines.begin(), lines.end(), default_random_engine{});
+  shuffle(lines.begin(), lines.end(), default_random_engine{});
 
-  for (int i = 0; i < lines.size() - 1; i++) {
+  for (int i = 0; i < lines.size(); i++) {
     cout << lines[i].second;
     cout << endl << "(" << i + 1 << ") ";
     cout << "what is " << lines[i].first << "? ";
