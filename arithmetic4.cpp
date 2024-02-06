@@ -56,22 +56,15 @@ int main() {
     } else {
       cout << "false" << endl;
     }
+
+    percentage = correctQuestions * 100.0 / questions;
+    if (percentage >= 60) {
+      cout << "At least 60% is correct. Stop.";
+      return 0;
+    }
   }
 
-  // percentage = correctQuestions * 100.0 / questions;
-  // if (percentage >= 90)
-  // grade = 'A';
-  // else if (percentage >= 80)
-  // grade = 'B';
-  // else if (percentage >= 70)
-  // grade = 'C';
-  // else if (percentage >= 60)
-  // grade = 'D';
-  // else
-  // grade = 'F';
-
-  // cout << endl << "percentage correct: " << percentage << "%" << endl;
-  // cout << "letter grade: " << grade;
+  cout << endl << "percentage correct: " << percentage << "%" << endl;
 
   return 0;
 }
