@@ -9,15 +9,12 @@ Assignment: Project 1 Task A
 */
 
 #include <cstdlib>
-#include <ctime>
 #include <ios>
 #include <iostream>
 
 using namespace std;
 
 int main() {
-  // srand(time(NULL));
-
   int OPERATORS[] = {'+', '-', '*', '/', '%'};
   int randomIndex = rand() % 6;
   int firstNumber = rand() % 10;
