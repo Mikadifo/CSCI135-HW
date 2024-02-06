@@ -15,7 +15,7 @@ Assignment: Project 1 Task A
 using namespace std;
 
 int main() {
-  int OPERATORS[] = {'+', '-', '*', '/', '%'};
+  int OPERATORS[5] = {'+', '-', '*', '/', '%'};
   int randomIndex = rand() % 6;
   int firstNumber = rand() % 10;
   int secondNumber, result, userAnswer;
