@@ -43,9 +43,10 @@ int main() {
 
   fin.close();
 
-  shuffle(lines.begin(), lines.end(), default_random_engine{});
+  // shuffle(lines.begin(), lines.end(), default_random_engine{});
 
   for (int i = 0; i < lines.size() - 1; i++) {
+    cout << lines[i].second;
     cout << endl << "(" << i + 1 << ") ";
     cout << "what is " << lines[i].first << "? ";
     cin >> userAnswer;
