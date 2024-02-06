@@ -1,13 +1,11 @@
+// This program creates a random mathematical problem and tests if the user's
+// answer is correct
+
 /*
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Project 1 Task A
-*/
-
-/*
- This program creates a random mathematical problem and tests if the user's
- answer is correct
 */
 
 #include <cstdlib>
@@ -21,9 +19,10 @@ int main() {
   srand(time(NULL));
 
   int OPERATORS[] = {'+', '-', '*', '/', '%'};
+  int randomIndex = rand() % 6;
   int firstNumber = rand() % 10;
   int secondNumber, result, userAnswer;
-  char randomOperator = OPERATORS[rand() % 6];
+  char randomOperator = OPERATORS[randomIndex];
 
   if (randomOperator == '/' || randomOperator == '%') {
     secondNumber = rand() % 9 + 1;
