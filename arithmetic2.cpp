@@ -19,10 +19,13 @@ int main() {
   float percentage;
   char randomOperator, grade;
 
-  do {
-    cout << "Enter the total number of questions to ask: ";
+  cout << "Enter the total number of questions to ask: ";
+  cin >> questions;
+
+  while (questions <= 0) {
+    cout << "The number of questions cannot be zero or negative. Re-enter: ";
     cin >> questions;
-  } while (questions <= 0);
+  }
 
   for (int i = 0; i < questions; i++) {
     randomIndex = rand() % 6;
@@ -48,7 +51,7 @@ int main() {
       result %= secondNumber;
 
     cout << endl << "(" << i + 1 << ") ";
-    cout << "What is " << firstNumber << randomOperator << secondNumber << "? ";
+    cout << "what is " << firstNumber << randomOperator << secondNumber << "? ";
     cin >> userAnswer;
 
     if (userAnswer == result) {
@@ -71,7 +74,7 @@ int main() {
   else
     grade = 'F';
 
-  cout << endl << "percentage correct: " << percentage << endl;
+  cout << endl << "percentage correct: " << percentage << "%" << endl;
   cout << "letter grade: " << grade << endl;
 
   return 0;
