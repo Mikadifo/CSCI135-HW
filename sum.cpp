@@ -6,20 +6,47 @@ Assignment: Project 1 Task A
 */
 
 /*
- This program reads a sequence of integers from cin and prints their sum.
+ This program creates a random mathematical problem and tests if the user's
+ answer is correct
 */
 
+#include <cstdlib>
+#include <ctime>
+#include <ios>
 #include <iostream>
+
 using namespace std;
 
 int main() {
-  int number, total = 0;
+  srand(time(NULL));
 
-  while (cin >> number) {
-    total += number;
+  int OPERATORS[] = {'+', '-', '*', '/', '%'};
+  int firstNumber = rand() % 10;
+  int secondNumber, result, userAnswer;
+  char randomOperator = OPERATORS[rand() % 6];
+
+  if (randomOperator == '/' || randomOperator == '%') {
+    secondNumber = rand() % 9 + 1;
+  } else {
+    secondNumber = rand() % 10;
   }
 
-  cout << total << endl;
+  result = firstNumber;
+  if (randomOperator == '+')
+    result += secondNumber;
+  else if (randomOperator == '-')
+    result -= secondNumber;
+  else if (randomOperator == '*')
+    result *= secondNumber;
+  else if (randomOperator == '/')
+    result /= secondNumber;
+  else
+    result %= secondNumber;
+
+  cout << "What is " << firstNumber << randomOperator << secondNumber << "? ";
+  cin >> userAnswer;
+
+  cout << boolalpha << (userAnswer == result) << endl;
 
   return 0;
 }
