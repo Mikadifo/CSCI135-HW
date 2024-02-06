@@ -16,7 +16,7 @@ Assignment: Project 1 Task A
 using namespace std;
 
 int main() {
-  srand(time(NULL));
+  // srand(time(NULL));
 
   int OPERATORS[] = {'+', '-', '*', '/', '%'};
   int randomIndex = rand() % 6;
