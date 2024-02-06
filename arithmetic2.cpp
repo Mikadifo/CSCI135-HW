@@ -28,7 +28,7 @@ int main() {
   }
 
   for (int i = 0; i < questions; i++) {
-    randomIndex = rand() % 6;
+    randomIndex = rand() % 5;
     firstNumber = rand() % 10;
     randomOperator = OPERATORS[randomIndex];
 
