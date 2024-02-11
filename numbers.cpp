@@ -17,7 +17,7 @@ bool isPrime(int n) {
     }
   }
 
-  return true;
+  return n != 1;
 }
 
 int main() {
