@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 5 C
 
-This program
+This program prints the next prime of a given number
 */
 
 #include <iostream>
