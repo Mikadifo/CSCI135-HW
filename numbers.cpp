@@ -10,7 +10,7 @@ Checks if a number is divisible by another and return true or false
 #include <iostream>
 using namespace std;
 
-bool isDivisibleBy(int n, int d) { return n % d == 0; }
+bool isDivisibleBy(int n, int d) { return (d == 0) ? false : n % d == 0; }
 
 int main() {
   int num1, num2;
