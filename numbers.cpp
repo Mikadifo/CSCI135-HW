@@ -17,7 +17,7 @@ bool isPrime(int n) {
     }
   }
 
-  return n != 1;
+  return n > 1;
 }
 
 int nextPrime(int n) { return isPrime(n + 1) ? n + 1 : nextPrime(n + 1); }
