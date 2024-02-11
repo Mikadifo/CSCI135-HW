@@ -2,9 +2,9 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 5 B
+Assignment: Lab 5 C
 
-This program checks if a number is prime
+This program
 */
 
 #include <iostream>
