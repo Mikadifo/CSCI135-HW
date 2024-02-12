@@ -21,10 +21,7 @@ bool isPrime(int n) {
 }
 
 bool isTwinPrime(int n) {
-  // cout << endl << isPrime(n - 2) << endl;
-  // cout << isPrime(n + 2) << endl;
-
-  return isPrime(n - 2) || isPrime(n + 2);
+  return isPrime(n) && (isPrime(n - 2) || isPrime(n + 2));
 }
 
 int main() {
@@ -34,7 +31,7 @@ int main() {
   cin >> number;
 
   cout << number
-       << (isTwinPrime(number) ? " is a twin prime" : "is not a twin prime");
+       << (isTwinPrime(number) ? " is a twin prime" : " is not a twin prime");
 
   return 0;
 }
