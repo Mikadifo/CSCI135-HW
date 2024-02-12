@@ -2,9 +2,9 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 6 B
+Assignment: Lab 6 C
 
-This program implements a Caesar cipher encryption
+This program implements a Vigenere cipher encryption with a keyword
 */
 
 #include <cctype>
@@ -13,15 +13,11 @@ This program implements a Caesar cipher encryption
 using namespace std;
 
 const int Z_ASCII = 90;
-const int z_ASCII = 122;
 const int A_ASCII = 65;
+const int z_ASCII = 122;
 const int a_ASCII = 97;
 
 char shiftChar(char c, int rshift) {
-  if (!isalpha(c)) {
-    return c;
-  }
-
   int ascii = (int)c;
   int newAscii = ascii + rshift;
 
@@ -36,27 +32,37 @@ char shiftChar(char c, int rshift) {
   return (char)newAscii;
 }
 
-string encryptCaesar(string plainText, int rshift) {
+string encryptVigenere(string plainText, string keyword) {
   string encryptedText;
+  int keywordIndex = 0;
 
   for (char character : plainText) {
-    encryptedText += shiftChar(character, rshift);
+    if (isalpha(character)) {
+      if (!keyword[keywordIndex]) {
+        keywordIndex -= keyword.length();
+      }
+      int rshift = (int)keyword[keywordIndex] - a_ASCII;
+      keywordIndex++;
+
+      encryptedText += shiftChar(character, rshift);
+    } else {
+      encryptedText += character;
+    }
   }
 
   return encryptedText;
 }
 
 int main() {
-  string message;
-  int rightShift;
+  string message, keyword;
 
   cout << "Enter a message: ";
   getline(cin, message);
 
-  cout << "Enter shift: ";
-  cin >> rightShift;
+  cout << "Enter a keyword: ";
+  cin >> keyword;
 
-  cout << "Ciphertext: " << encryptCaesar(message, rightShift) << endl;
+  cout << "Ciphertext: " << encryptVigenere(message, keyword) << endl;
 
   return 0;
 }
