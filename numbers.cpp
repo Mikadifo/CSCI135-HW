@@ -24,17 +24,25 @@ bool isTwinPrime(int n) {
   return isPrime(n) && (isPrime(n - 2) || isPrime(n + 2));
 }
 
-int nextTwinPrime(int n) {
-  return isTwinPrime(n + 1) ? n + 1 : nextTwinPrime(n + 1);
+int largestTwinPrime(int a, int b) {
+  for (int i = b; i >= a; i--) {
+    if (isTwinPrime(i)) {
+      return i;
+    }
+  }
+
+  return -1;
 }
 
 int main() {
-  int number;
+  int number1, number2;
 
   cout << "Enter a number: ";
-  cin >> number;
+  cin >> number1;
+  cout << "Enter a number: ";
+  cin >> number2;
 
-  cout << nextTwinPrime(number);
+  cout << largestTwinPrime(number1, number2);
 
   return 0;
 }
