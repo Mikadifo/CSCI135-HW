@@ -18,6 +18,10 @@ const int A_ASCII = 65;
 const int a_ASCII = 97;
 
 char shiftChar(char c, int rshift) {
+  if (!isalpha(c)) {
+    return c;
+  }
+
   int ascii = (int)c;
   int newAscii = ascii + rshift;
 
@@ -36,11 +40,7 @@ string encryptCaesar(string plainText, int rshift) {
   string encryptedText;
 
   for (char character : plainText) {
-    if (isalpha(character)) {
-      encryptedText += shiftChar(character, rshift);
-    } else {
-      encryptedText += character;
-    }
+    encryptedText += shiftChar(character, rshift);
   }
 
   return encryptedText;
