@@ -20,7 +20,12 @@ bool isPrime(int n) {
   return n > 1;
 }
 
-bool isTwinPrime(int n) { return (isPrime(n - 2) || isPrime(n + 2)); }
+bool isTwinPrime(int n) {
+  // cout << endl << isPrime(n - 2) << endl;
+  // cout << isPrime(n + 2) << endl;
+
+  return isPrime(n - 2) || isPrime(n + 2);
+}
 
 int main() {
   int number;
