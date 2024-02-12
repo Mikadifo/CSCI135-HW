@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 5 E
 
-This program checks if a number is a twin prime
+This program return the next twin prime of a given number
 */
 
 #include <iostream>
@@ -24,14 +24,17 @@ bool isTwinPrime(int n) {
   return isPrime(n) && (isPrime(n - 2) || isPrime(n + 2));
 }
 
+int nextTwinPrime(int n) {
+  return isTwinPrime(n + 1) ? n + 1 : nextTwinPrime(n + 1);
+}
+
 int main() {
   int number;
 
   cout << "Enter a number: ";
   cin >> number;
 
-  cout << number
-       << (isTwinPrime(number) ? " is a twin prime" : " is not a twin prime");
+  cout << nextTwinPrime(number);
 
   return 0;
 }
