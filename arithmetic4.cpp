@@ -44,16 +44,13 @@ int main() {
 
   fin.close();
 
-  // pick random index from vector, then move it to the end and pick another
-  // from 0 to size-1
   int size = lines.size();
   int randomIndex;
 
   while (size > 0) {
     randomIndex = rand() % size;
 
-    cout << lines[randomIndex].second; // TODO REMOVE THIS LINE
-    cout << endl << "(" << questions - size << ") ";
+    cout << endl << "(" << questions - size + 1 << ") ";
     cout << "what is " << lines[randomIndex].first << "? ";
     cin >> userAnswer;
 
