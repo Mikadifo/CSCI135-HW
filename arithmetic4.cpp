@@ -10,6 +10,7 @@ Assignment: Project 1 D
 */
 
 #include <algorithm>
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <random>
@@ -43,15 +44,20 @@ int main() {
 
   fin.close();
 
-  shuffle(lines.begin(), lines.end(), default_random_engine{});
+  // pick random index from vector, then move it to the end and pick another
+  // from 0 to size-1
+  int size = lines.size();
+  int randomIndex;
 
-  for (int i = 0; i < lines.size(); i++) {
-    cout << lines[i].second;
-    cout << endl << "(" << i + 1 << ") ";
-    cout << "what is " << lines[i].first << "? ";
+  while (size > 0) {
+    randomIndex = rand() % size;
+
+    cout << lines[randomIndex].second; // TODO REMOVE THIS LINE
+    cout << endl << "(" << questions - size << ") ";
+    cout << "what is " << lines[randomIndex].first << "? ";
     cin >> userAnswer;
 
-    if (lines[i].second == userAnswer) {
+    if (lines[randomIndex].second == userAnswer) {
       cout << "true" << endl;
       correctQuestions++;
     } else {
@@ -63,6 +69,9 @@ int main() {
       cout << "At least 60% is correct. Stop.";
       return 0;
     }
+
+    swap(lines[randomIndex], lines.back());
+    size--;
   }
 
   cout << endl << "percentage correct: " << percentage << "%" << endl;
