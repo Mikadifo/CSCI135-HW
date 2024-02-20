@@ -13,18 +13,18 @@ Assignment: Project 1 D
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
-#include <random>
 #include <sstream>
 #include <string>
 #include <utility>
 #include <vector>
+
 using namespace std;
 
 int main() {
   vector<pair<string, float>> lines;
   string line, problem;
   float answer, userAnswer, percentage;
-  int questions = 0, correctQuestions = 0;
+  int questions = 0, correctQuestions = 0, randomIndex, size;
   char grade;
 
   ifstream fin("problems.csv");
@@ -38,15 +38,12 @@ int main() {
     getline(iss, problem, ',');
     iss >> answer;
     lines.push_back(make_pair(problem, answer));
-
     questions++;
   }
 
   fin.close();
 
-  int size = lines.size();
-  int randomIndex;
-
+  size = lines.size();
   while (size > 0) {
     randomIndex = rand() % size;
 
