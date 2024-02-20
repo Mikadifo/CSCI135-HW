@@ -50,15 +50,15 @@ int main() {
   while (size > 0) {
     randomIndex = rand() % size;
 
-    cout << endl << "(" << questions - size + 1 << ") ";
+    cout << "(" << questions - size + 1 << ") ";
     cout << "what is " << lines[randomIndex].first << "? ";
     cin >> userAnswer;
 
     if (lines[randomIndex].second == userAnswer) {
-      cout << "true" << endl;
+      cout << "true" << endl << endl;
       correctQuestions++;
     } else {
-      cout << "false" << endl;
+      cout << "false" << endl << endl;
     }
 
     percentage = correctQuestions * 100.0 / questions;
@@ -71,7 +71,7 @@ int main() {
     size--;
   }
 
-  cout << endl << "percentage correct: " << percentage << "%" << endl;
+  cout << "percentage correct: " << percentage << "%" << endl;
 
   return 0;
 }
