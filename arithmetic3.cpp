@@ -16,7 +16,7 @@ using namespace std;
 int main() {
   string line, problem;
   float answer, userAnswer, percentage;
-  int questions = 0, correctQuestions;
+  int questions = 0, correctQuestions = 0;
   char grade;
 
   ifstream fin("problems.csv");
@@ -30,7 +30,7 @@ int main() {
     istringstream iss(line);
 
     getline(iss, problem, ',');
-    cout << endl << "(" << questions + 1 << ") ";
+    cout << endl << "(" << questions << ") ";
     cout << "what is " << problem << "? ";
     cin >> userAnswer;
     iss >> answer;
