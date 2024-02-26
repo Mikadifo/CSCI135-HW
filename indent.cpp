@@ -2,16 +2,21 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 7 A
+Assignment: Lab 7 B
 */
 
-// This program reads a cpp file and removes all leading spaces from it.
+//
 
+#include <algorithm>
 #include <cctype>
 #include <iostream>
+
 using namespace std;
 
-// This function removes all leading spaces from a given line
+int countChar(string line, char c) {
+  return count(line.begin(), line.end(), c);
+}
+
 string removeLeadingSpaces(string line) {
   string newLine;
 
@@ -27,9 +32,18 @@ string removeLeadingSpaces(string line) {
 
 int main() {
   string line;
+  int open = 0;
 
   while (getline(cin, line)) {
-    cout << removeLeadingSpaces(line) << endl;
+    line = removeLeadingSpaces(line);
+    if (line[0] == '}') {
+      line = string(open - 1, '\t') + line;
+    } else {
+      line = string(open, '\t') + line;
+    }
+    cout << line << endl;
+    open += countChar(line, '{');
+    open -= countChar(line, '}');
   }
 
   return 0;
