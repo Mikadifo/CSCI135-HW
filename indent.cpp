@@ -5,7 +5,7 @@ Instructor: Tong Yi
 Assignment: Lab 7 B
 */
 
-//
+// This program indents a given code file
 
 #include <algorithm>
 #include <cctype>
@@ -13,10 +13,12 @@ Assignment: Lab 7 B
 
 using namespace std;
 
+// This function count the ocurrences of a given char in a string line
 int countChar(string line, char c) {
   return count(line.begin(), line.end(), c);
 }
 
+// This function removes the leading spaces from a given string line
 string removeLeadingSpaces(string line) {
   string newLine;
 
