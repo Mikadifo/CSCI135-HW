@@ -3,9 +3,9 @@ Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 7 A
-
-This program reads a cpp file and removes all leading spaces from it.
 */
+
+// This program reads a cpp file and removes all leading spaces from it.
 
 #include <cctype>
 #include <iostream>
