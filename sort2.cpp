@@ -19,9 +19,9 @@ void sort2(double *p, double *q) {
 }
 
 int main() {
-  double x = 8;
+  double x = 5.2;
   double *xPointer = &x;
-  double y = 3;
+  double y = 3.7;
   double *yPointer = &y;
 
   cout << *xPointer << endl;
