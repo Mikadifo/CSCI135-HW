@@ -52,10 +52,10 @@ int main() {
     cin >> userAnswer;
 
     if (lines[randomIndex].second == userAnswer) {
-      cout << "true" << endl << endl;
+      cout << "true" << endl;
       correctQuestions++;
     } else {
-      cout << "false" << endl << endl;
+      cout << "false" << endl;
     }
 
     percentage = correctQuestions * 100.0 / questions;
