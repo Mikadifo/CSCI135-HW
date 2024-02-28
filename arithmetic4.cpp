@@ -47,7 +47,7 @@ int main() {
   while (size > 0) {
     randomIndex = rand() % size;
 
-    // cout << "(" << questions - size + 1 << ") ";
+    cout << "(" << questions - size + 1 << ") ";
     cout << "what is " << lines[randomIndex].first << "? ";
     cin >> userAnswer;
 
@@ -64,7 +64,7 @@ int main() {
       return 0;
     }
 
-    swap(lines[randomIndex], lines.back());
+    lines.erase(lines.begin() + randomIndex);
     size--;
   }
 
