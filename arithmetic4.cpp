@@ -60,7 +60,7 @@ int main() {
 
     percentage = correctQuestions * 100.0 / questions;
     if (percentage >= 60) {
-      cout << "At least 60% is correct. Stop." << endl;
+      cout << endl << "At least 60% is correct. Stop." << endl;
       return 0;
     }
 
@@ -68,7 +68,7 @@ int main() {
     size--;
   }
 
-  cout << "percentage correct: " << percentage << "%" << endl;
+  cout << endl << "percentage correct: " << percentage << "%" << endl;
 
   return 0;
 }
