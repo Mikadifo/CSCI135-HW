@@ -27,6 +27,8 @@ int main() {
   int questions, correctQuestions = 0, randomIndex;
   char grade;
 
+  int size;
+
   ifstream fin("problems.csv");
   if (fin.fail()) {
     cerr << "File cannot be opened for reading." << endl;
@@ -39,14 +41,16 @@ int main() {
     iss >> answer;
     lines.push_back(make_pair(problem, answer));
   }
+
   questions = lines.size();
+  size = lines.size();
 
   fin.close();
 
-  while (lines.size() > 0) {
-    randomIndex = rand() % lines.size();
+  while (size > 0 && percentage < 60) {
+    randomIndex = rand() % size;
 
-    cout << "(" << questions - lines.size() + 1 << ") ";
+    cout << "(" << questions - size + 1 << ") ";
     cout << "what is " << lines[randomIndex].first << "? ";
     cin >> userAnswer;
 
@@ -58,16 +62,15 @@ int main() {
     }
 
     percentage = correctQuestions * 100.0 / questions;
-    if (percentage >= 60) {
-      cout << endl << "percentage correct: " << percentage << "%" << endl;
-      cout << endl << "At least 60% is correct. Stop." << endl;
-      return 0;
-    }
 
-    lines.erase(lines.begin() + randomIndex);
+    swap(lines[randomIndex], lines[size - 1]);
+    size--;
   }
 
   cout << endl << "percentage correct: " << percentage << "%" << endl;
+  if (percentage >= 60) {
+    cout << endl << "At least 60% is correct. Stop." << endl;
+  }
 
   return 0;
 }
