@@ -24,7 +24,7 @@ int main() {
   vector<pair<string, float>> lines;
   string line, problem;
   float answer, userAnswer, percentage;
-  int questions = 0, correctQuestions = 0, randomIndex, size;
+  int questions = 0, correctQuestions = 0, randomIndex;
   char grade;
 
   ifstream fin("problems.csv");
@@ -43,11 +43,10 @@ int main() {
 
   fin.close();
 
-  size = lines.size();
-  while (size > 0) {
-    randomIndex = rand() % size;
+  while (lines.size() > 0) {
+    randomIndex = rand() % lines.size();
 
-    cout << "(" << questions - size + 1 << ") ";
+    cout << "(" << questions - lines.size() + 1 << ") ";
     cout << "what is " << lines[randomIndex].first << "? ";
     cin >> userAnswer;
 
@@ -65,7 +64,6 @@ int main() {
     }
 
     lines.erase(lines.begin() + randomIndex);
-    size--;
   }
 
   cout << endl << "percentage correct: " << percentage << "%" << endl;
