@@ -24,7 +24,7 @@ int main() {
   vector<pair<string, float>> lines;
   string line, problem;
   float answer, userAnswer, percentage;
-  int questions = 0, correctQuestions = 0, randomIndex;
+  int questions, correctQuestions = 0, randomIndex;
   char grade;
 
   ifstream fin("problems.csv");
@@ -38,8 +38,8 @@ int main() {
     getline(iss, problem, ',');
     iss >> answer;
     lines.push_back(make_pair(problem, answer));
-    questions++;
   }
+  questions = lines.size();
 
   fin.close();
 
