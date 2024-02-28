@@ -47,7 +47,7 @@ int main() {
   while (size > 0) {
     randomIndex = rand() % size;
 
-    cout << "(" << questions - size + 1 << ") ";
+    // cout << "(" << questions - size + 1 << ") ";
     cout << "what is " << lines[randomIndex].first << "? ";
     cin >> userAnswer;
 
@@ -60,7 +60,6 @@ int main() {
 
     percentage = correctQuestions * 100.0 / questions;
     if (percentage >= 60) {
-      cout << "percentage: " << percentage << endl;
       cout << "At least 60% is correct. Stop." << endl;
       return 0;
     }
