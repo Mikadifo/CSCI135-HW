@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 8 B
 
-This program reads an image and creates a white box in the middle of the image
+This program reads an image and draws a one-pixel border in the middle of it
 */
 
 #include <cassert>
@@ -87,9 +87,21 @@ int getInverseColor(int colorNumber) { return 255 - colorNumber; }
 
 // This function checks if a given number is within the half of a specified size
 bool numberInCenter(int number, int size) {
-  int halfSize = size / 2;
+  return number >= size / 2 && number <= size + (size / 2);
+}
 
-  return number >= halfSize / 2 && number <= halfSize + (halfSize / 2);
+// This function checks if a given pixel is within the range of a 1px box in the
+// middle of the
+bool isWithinBoxBorder(int col, int row, int width, int height) {
+  bool numberInTop = row == height / 2 + 1;
+  bool numberInBottom = row == (height * 2 - height / 2) + 1;
+  bool numberInLeft = col == width / 2 + 1;
+  bool numberInRight = col == (width + width / 2) + 1;
+
+  return (numberInCenter(col, width) && numberInTop) ||
+         (numberInCenter(col, width) && numberInBottom) ||
+         (numberInCenter(row, height) && numberInLeft) ||
+         (numberInCenter(row, height) && numberInRight);
 }
 
 int main() {
@@ -106,10 +118,12 @@ int main() {
   // Now we can manipulate the image the way we like
   // for example we copy its contents into a new array
   int out[MAX_H][MAX_W];
+  int halfWidth = width / 2;
+  int halfHeight = height / 2;
 
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
-      if (numberInCenter(col, width) && numberInCenter(row, height)) {
+      if (isWithinBoxBorder(col, row, halfWidth, halfHeight)) {
         out[row][col] = 255;
       } else {
         out[row][col] = img[row][col];
