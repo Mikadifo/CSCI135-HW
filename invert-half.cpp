@@ -2,9 +2,10 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 8 A
+Assignment: Lab 8 B
 
-This program reads an image and creates a copy with its colors inversed
+This program reads an image and creates a copy with its colors inversed only in
+the right half
 */
 
 #include <cassert>
@@ -102,7 +103,11 @@ int main() {
 
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
-      out[row][col] = getInverseColor(img[row][col]);
+      if (col >= width / 2) {
+        out[row][col] = getInverseColor(img[row][col]);
+      } else {
+        out[row][col] = img[row][col];
+      }
     }
   }
 
