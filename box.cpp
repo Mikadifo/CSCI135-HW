@@ -86,6 +86,13 @@ void writeImage(int image[MAX_H][MAX_W], int height, int width) {
 // If colorNumber = 253 this will return 2
 int getInverseColor(int colorNumber) { return 255 - colorNumber; }
 
+// This function checks if a given number is within the half of a specified size
+bool numberInCenter(int number, int size) {
+  int halfSize = size / 2;
+
+  return number >= halfSize / 2 && number <= halfSize + (halfSize / 2);
+}
+
 int main() {
 
   int img[MAX_H][MAX_W];
@@ -101,17 +108,10 @@ int main() {
   // for example we copy its contents into a new array
   int out[MAX_H][MAX_W];
 
-  // TODO: width=200/2 = 100, 100 center -> 50 to the left + 50 to the right
-  // TODO: height=200/2 = 100, 100 center -> 50 up + 50 down
-  // TODO: keep painting white while col >= 100/2 and col <= 100+(100/2) AND
-  // keep painting white while row >= 100/2 and row <= 100+(100/2)
-  int widthCenter = width / 2;
-  int heightCenter = height / 2;
-
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
-      if (col >= width / 2) {
-        out[row][col] = getInverseColor(img[row][col]);
+      if (numberInCenter(col, width) && numberInCenter(row, height)) {
+        out[row][col] = 255;
       } else {
         out[row][col] = img[row][col];
       }
