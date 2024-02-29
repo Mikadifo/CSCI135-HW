@@ -94,9 +94,9 @@ bool numberInCenter(int number, int size) {
 // middle of the
 bool isWithinBoxBorder(int col, int row, int width, int height) {
   bool numberInTop = row == height / 2;
-  bool numberInBottom = row == (height * 2 - height / 2) - 1;
+  bool numberInBottom = row == height + height / 2;
   bool numberInLeft = col == width / 2 + 1;
-  bool numberInRight = col == (width + width / 2) + 1;
+  bool numberInRight = col == width + width / 2 + 1;
 
   return (numberInCenter(col, width) && numberInTop) ||
          (numberInCenter(col, width) && numberInBottom) ||
