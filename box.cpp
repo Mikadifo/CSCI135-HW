@@ -101,6 +101,13 @@ int main() {
   // for example we copy its contents into a new array
   int out[MAX_H][MAX_W];
 
+  // TODO: width=200/2 = 100, 100 center -> 50 to the left + 50 to the right
+  // TODO: height=200/2 = 100, 100 center -> 50 up + 50 down
+  // TODO: keep painting white while col >= 100/2 and col <= 100+(100/2) AND
+  // keep painting white while row >= 100/2 and row <= 100+(100/2)
+  int widthCenter = width / 2;
+  int heightCenter = height / 2;
+
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
       if (col >= width / 2) {
