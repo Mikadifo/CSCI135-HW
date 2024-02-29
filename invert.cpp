@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 8 A
 
-This program
+This program reads an image and creates a copy with its colors inversed
 */
 
 #include <cassert>
