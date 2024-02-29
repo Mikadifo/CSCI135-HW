@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 8 B
 
-This program reads an image and draws a one-pixel border in the middle of it
+This program reads an image and
 */
 
 #include <cassert>
@@ -90,20 +90,6 @@ bool numberInCenter(int number, int size) {
   return number >= size / 2 && number <= size + (size / 2);
 }
 
-// This function checks if a given pixel is within the range of a 1px box in the
-// middle of the
-bool isWithinBoxBorder(int col, int row, int width, int height) {
-  bool numberInTop = row == height / 2;
-  bool numberInBottom = row == height + height / 2;
-  bool numberInLeft = col == width / 2 + 1;
-  bool numberInRight = col == width + width / 2 + 1;
-
-  return (numberInCenter(col, width) && numberInTop) ||
-         (numberInCenter(col, width) && numberInBottom) ||
-         (numberInCenter(row, height) && numberInLeft) ||
-         (numberInCenter(row, height) && numberInRight);
-}
-
 int main() {
 
   int img[MAX_H][MAX_W];
@@ -118,21 +104,23 @@ int main() {
   // Now we can manipulate the image the way we like
   // for example we copy its contents into a new array
   int out[MAX_H][MAX_W];
-  int halfWidth = width / 2;
-  int halfHeight = height / 2;
+  int colCount = 0;
+  int rowCount = 0;
 
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
-      if (isWithinBoxBorder(col, row, halfWidth, halfHeight)) {
-        out[row][col] = 255;
-      } else {
-        out[row][col] = img[row][col];
-      }
+      out[row + rowCount][col + colCount] = img[row][col];
+      out[row + rowCount + 1][col + colCount] = img[row][col];
+      colCount++;
+      out[row + rowCount][col + colCount] = img[row][col];
+      out[row + rowCount + 1][col + colCount] = img[row][col];
     }
+    rowCount++;
+    colCount = 0;
   }
 
   // and save this new image to file "outImage.pgm"
-  writeImage(out, height, width);
+  writeImage(out, height * 2, width * 2);
 
   return 0;
 }
