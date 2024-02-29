@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 8 B
 
-This program reads an image and
+This program reads an image and increases its size by 200%
 */
 
 #include <cassert>
