@@ -4,8 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 8 B
 
-This program reads an image and creates a copy with its colors inversed only in
-the right half
+This program reads an image and creates a white box in the middle of the image
 */
 
 #include <cassert>
