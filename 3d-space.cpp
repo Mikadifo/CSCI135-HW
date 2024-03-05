@@ -2,7 +2,7 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 9 A
+Assignment: Lab 9 B
 
 This program checks which is the farthest point to the origin of 2 given 3d
 points
