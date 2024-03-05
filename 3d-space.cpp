@@ -19,11 +19,13 @@ public:
   double z;
 };
 
+// This functions returns the length of a given 3d point
 double length(Coord3D *p) {
   Coord3D point = *p;
   return sqrt(pow(point.x, 2) + pow(point.y, 2) + pow(point.z, 2));
 }
 
+// This functions returns the point that is farthest from the origin
 Coord3D *fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
   return length(p1) > length(p2) ? p1 : p2;
 }
