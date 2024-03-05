@@ -4,7 +4,8 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 9 A
 
-This program checks which is the closes point to the origin of 2 given 3d points
+This program checks which is the farthest point to the origin of 2 given 3d
+points
 */
 
 #include <cmath>
