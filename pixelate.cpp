@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 8 B
 
-This program reads an image and
+This program reads an image and pixelates it
 */
 
 #include <cassert>
@@ -81,15 +81,6 @@ void writeImage(int image[MAX_H][MAX_W], int height, int width) {
   return;
 }
 
-// It receives a color number between 0-255 and return the inverse
-// If colorNumber = 253 this will return 2
-int getInverseColor(int colorNumber) { return 255 - colorNumber; }
-
-// This function checks if a given number is within the half of a specified size
-bool numberInCenter(int number, int size) {
-  return number >= size / 2 && number <= size + (size / 2);
-}
-
 int main() {
 
   int img[MAX_H][MAX_W];
@@ -104,23 +95,27 @@ int main() {
   // Now we can manipulate the image the way we like
   // for example we copy its contents into a new array
   int out[MAX_H][MAX_W];
-  int colCount = 0;
-  int rowCount = 0;
+  int average = 0;
 
-  for (int row = 0; row < height; row++) {
-    for (int col = 0; col < width; col++) {
-      out[row + rowCount][col + colCount] = img[row][col];
-      out[row + rowCount + 1][col + colCount] = img[row][col];
-      colCount++;
-      out[row + rowCount][col + colCount] = img[row][col];
-      out[row + rowCount + 1][col + colCount] = img[row][col];
+  for (int row = 0; row < height; row += 2) {
+    for (int col = 0; col < width; col += 2) {
+      average += img[row][col];
+      average += img[row][col + 1];
+      average += img[row + 1][col];
+      average += img[row + 1][col + 1];
+      average /= 4;
+
+      out[row][col] = average;
+      out[row][col + 1] = average;
+      out[row + 1][col] = average;
+      out[row + 1][col + 1] = average;
+
+      average = 0;
     }
-    rowCount++;
-    colCount = 0;
   }
 
   // and save this new image to file "outImage.pgm"
-  writeImage(out, height * 2, width * 2);
+  writeImage(out, height, width);
 
   return 0;
 }
