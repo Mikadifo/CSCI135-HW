@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 9 A
 
-This program
+This program checks which is the closes point to the origin of 2 given 3d points
 */
 
 #include <cmath>
@@ -24,7 +24,7 @@ double length(Coord3D *p) {
 }
 
 Coord3D *fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
-  return length(p1) < length(p2) ? p1 : p2;
+  return length(p1) > length(p2) ? p1 : p2;
 }
 
 int main() {
