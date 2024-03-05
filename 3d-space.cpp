@@ -8,6 +8,7 @@ This program receives the coordinates of a point P passed as a pointer, and
 computes the distance from the origin to the point P
 */
 
+#include <cmath>
 #include <iostream>
 using namespace std;
 
@@ -19,12 +20,14 @@ public:
 };
 
 double length(Coord3D *p) {
-  int;
-  return 0;
+  Coord3D point = *p;
+  return sqrt(pow(point.x, 2) + pow(point.y, 2) + pow(point.z, 2));
 }
 
 int main() {
-  int;
+  Coord3D pointP = {10, 20, 30};
+
+  cout << length(&pointP) << endl;
 
   return 0;
 }
