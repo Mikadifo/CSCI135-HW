@@ -7,7 +7,7 @@ Assignment: Lab 9 D
 This program keeps printing poems and storing them dinamically
 */
 
-#include <string>
+#include <iostream>
 using namespace std;
 
 string *createAPoemDynamically() {
@@ -24,4 +24,6 @@ int main() {
     // assume that the poem p is not needed at this point
     delete p;
   }
+
+  return 0;
 }
