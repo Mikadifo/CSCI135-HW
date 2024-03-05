@@ -2,7 +2,7 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 9 A
+Assignment: Lab 9 C
 
 This program calculates the new position of a 3d point given a initial pos,
 velocity and time
