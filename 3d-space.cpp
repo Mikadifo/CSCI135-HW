@@ -4,8 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 9 A
 
-This program receives the coordinates of a point P passed as a pointer, and
-computes the distance from the origin to the point P
+This program
 */
 
 #include <cmath>
@@ -24,10 +23,20 @@ double length(Coord3D *p) {
   return sqrt(pow(point.x, 2) + pow(point.y, 2) + pow(point.z, 2));
 }
 
+Coord3D *fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
+  return length(p1) < length(p2) ? p1 : p2;
+}
+
 int main() {
   Coord3D pointP = {10, 20, 30};
+  Coord3D pointQ = {0, 1, 2};
 
-  cout << length(&pointP) << endl;
+  cout << "Address of P: " << &pointP << endl;
+  cout << "Address of Q: " << &pointQ << endl << endl;
+
+  Coord3D *ans = fartherFromOrigin(&pointP, &pointQ);
+
+  cout << "ans = " << ans << endl;
 
   return 0;
 }
