@@ -4,8 +4,8 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 9 A
 
-This program checks which is the farthest point to the origin of 2 given 3d
-points
+This program calculates the new position of a 3d point given a initial pos,
+velocity and time
 */
 
 #include <cmath>
@@ -30,16 +30,18 @@ Coord3D *fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
   return length(p1) > length(p2) ? p1 : p2;
 }
 
+void move(Coord3D *ppos, Coord3D *pvel, double dt) {
+  (*ppos).x = (*ppos).x + (*pvel).x * dt;
+  (*ppos).y = (*ppos).y + (*pvel).y * dt;
+  (*ppos).z = (*ppos).z + (*pvel).z * dt;
+}
+
 int main() {
-  Coord3D pointP = {10, 20, 30};
-  Coord3D pointQ = {0, 1, 2};
+  Coord3D pos = {0, 0, 100.0};
+  Coord3D vel = {1, -5, 0.2};
 
-  cout << "Address of P: " << &pointP << endl;
-  cout << "Address of Q: " << &pointQ << endl << endl;
-
-  Coord3D *ans = fartherFromOrigin(&pointP, &pointQ);
-
-  cout << "ans = " << ans << endl;
+  move(&pos, &vel, 2.0);
+  cout << pos.x << " " << pos.y << " " << pos.z << endl;
 
   return 0;
 }
