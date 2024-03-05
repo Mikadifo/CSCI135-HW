@@ -11,6 +11,18 @@ computes the distance from the origin to the point P
 #include <iostream>
 using namespace std;
 
+class Coord3D {
+public:
+  double x;
+  double y;
+  double z;
+};
+
+double length(Coord3D *p) {
+  int;
+  return 0;
+}
+
 int main() {
   int;
 
