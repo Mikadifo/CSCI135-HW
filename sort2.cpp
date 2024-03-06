@@ -12,23 +12,26 @@ using namespace std;
 
 void sort2(double *p, double *q) {
   if (*p > *q) {
-    double *aux = p;
-    p = q;
-    q = aux;
+    double auxP = *p;
+    *p = *q;
+    *q = auxP;
   }
 }
 
 int main() {
-  double x = 5.2;
-  double *xPointer = &x;
-  double y = 3.7;
-  double *yPointer = &y;
+  double x = 5.2, y = 3.7;
+  // double *xPointer = &x;
+  // double *yPointer = &y;
 
-  cout << *xPointer << endl;
-  cout << *yPointer << endl;
-  sort2(xPointer, yPointer);
-  cout << *xPointer << endl;
-  cout << *yPointer << endl;
+  // cout << *xPointer << endl;
+  // cout << *yPointer << endl;
+  cout << x << endl;
+  cout << y << endl;
+  sort2(&x, &y);
+  cout << x << endl;
+  cout << y << endl;
+  // cout << *xPointer << endl;
+  // cout << *yPointer << endl;
 
   return 0;
 }
