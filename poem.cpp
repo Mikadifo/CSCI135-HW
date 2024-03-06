@@ -23,6 +23,7 @@ int main() {
 
     // assume that the poem p is not needed at this point
     delete p;
+    p = NULL;
   }
 
   return 0;
