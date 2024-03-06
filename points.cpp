@@ -2,7 +2,7 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Homework E1.16
+Assignment: Homework E7.16
 
 This program calculates the distance between two Points
 */
