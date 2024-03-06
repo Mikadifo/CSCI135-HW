@@ -18,12 +18,12 @@ public:
 };
 
 double distance(Point a, Point b) {
-  return sqrt(pow((b.x - a.x), 2) + pow(b.y - b.x, 2));
+  return sqrt(pow((b.x - a.x), 2) + pow(b.y - a.y, 2));
 }
 
 int main() {
-  Point pointA = Point({4, 2});
-  Point pointB = Point({6, 0});
+  Point pointA = Point({1, 3});
+  Point pointB = Point({5, 7});
 
   cout << distance(pointA, pointB) << endl;
 
