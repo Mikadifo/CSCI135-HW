@@ -24,7 +24,7 @@ public:
   };
   string getUsername() { return username; };
   string getFullName() { return displayName + " (@" + username + ")"; }
-  void setDisplayName(string displayName) { displayName = displayName; };
+  void setDisplayName(string displayName) { this->displayName = displayName; };
 };
 
 int main() {
