@@ -2,10 +2,9 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 10 C
+Assignment: Lab 10 D
 
-This program prints the info of different movies after calculating its time
-slots
+This program schedules a given movie right after the end of the last time slot
 */
 
 #include <iostream>
@@ -67,23 +66,24 @@ void printTimeSlot(TimeSlot ts) {
   cout << line << endl;
 }
 
+// returns a new TimeSlot for the movie nextMovie, scheduled immediately after
+// the time slot ts
+TimeSlot scheduleAfter(TimeSlot ts, Movie nexMovie) {
+  TimeSlot newTimeSlot;
+  newTimeSlot.movie = nexMovie;
+  newTimeSlot.startTime = addMinutes(ts.startTime, ts.movie.duration);
+
+  return newTimeSlot;
+}
+
 int main() {
   Movie movie1 = {"Back to the Future", COMEDY, 116};
   Movie movie2 = {"Black Panther", ACTION, 134};
-  Movie movie3 = {"Kung Fu Panda 4", ACTION, 94};
-  Movie movie4 = {"Poor Things", ROMANCE, 211};
 
   TimeSlot morning = {movie1, {9, 15}};
-  TimeSlot daytime = {movie2, {12, 15}};
-  TimeSlot evening = {movie2, {16, 45}};
-  TimeSlot noon = {movie3, {11, 30}};
-  TimeSlot lateNight = {movie4, {20, 00}};
 
   printTimeSlot(morning);
-  printTimeSlot(daytime);
-  printTimeSlot(evening);
-  printTimeSlot(noon);
-  printTimeSlot(lateNight);
+  printTimeSlot(scheduleAfter(morning, movie2));
 
   return 0;
 }
