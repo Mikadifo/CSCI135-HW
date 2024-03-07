@@ -27,10 +27,11 @@ int minutesUntil(Time earlier, Time later) {
 
 // returns a new moment of time that is min minutes after time0
 Time addMinutes(Time time0, int min) {
-  int hoursExtra = min / 60;
+  int newMin = time0.m + min;
+  int extraHours = newMin / 60;
   Time time;
-  time.h = time0.h + hoursExtra;
-  time.m = time0.m + min - 60 * hoursExtra;
+  time.h = time0.h + extraHours;
+  time.m = time0.m + min - 60 * extraHours;
 
   return time;
 }
