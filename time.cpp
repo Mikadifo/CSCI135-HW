@@ -78,7 +78,12 @@ TimeSlot scheduleAfter(TimeSlot ts, Movie nexMovie) {
 
 // returns true if the two time slots overlap, otherwise return false
 bool timeOverlap(TimeSlot ts1, TimeSlot ts2) {
-  return minutesUntil(ts1.startTime, ts2.startTime) < ts1.movie.duration;
+  if (minutesSinceMidnight(ts1.startTime) <
+      minutesSinceMidnight(ts2.startTime)) {
+    return ts1.movie.duration < minutesUntil(ts1.startTime, ts2.startTime);
+  }
+
+  return ts2.movie.duration < minutesUntil(ts2.startTime, ts1.startTime);
 }
 
 int main() {
