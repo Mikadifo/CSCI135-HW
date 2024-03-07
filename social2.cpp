@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 11 B
 
-This program
+This program implements the Network class and its methods
 */
 
 #include <iostream>
