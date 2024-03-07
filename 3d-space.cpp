@@ -36,12 +36,33 @@ void move(Coord3D *ppos, Coord3D *pvel, double dt) {
   (*ppos).z = (*ppos).z + (*pvel).z * dt;
 }
 
-int main() {
-  Coord3D pos = {0, 0, 100.0};
-  Coord3D vel = {1, -5, 0.2};
+Coord3D *createCoord3D(double x, double y, double z) {
+  Coord3D *cpointer = new Coord3D;
+  (*cpointer).x = x;
+  (*cpointer).y = y;
+  (*cpointer).z = z;
 
-  move(&pos, &vel, 2.0);
-  cout << pos.x << " " << pos.y << " " << pos.z << endl;
+  return cpointer;
+}
+
+void deleteCoord3D(Coord3D *p) { delete p; }
+
+int main() {
+  double x, y, z;
+  cout << "Enter position: ";
+  cin >> x >> y >> z;
+  Coord3D *ppos = createCoord3D(x, y, z);
+
+  cout << "Enter velocity: ";
+  cin >> x >> y >> z;
+  Coord3D *pvel = createCoord3D(x, y, z);
+
+  move(ppos, pvel, 10.0);
+  cout << "Coordinates after 10 seconds: " << (*ppos).x << " " << (*ppos).y
+       << " " << (*ppos).z << endl;
+
+  deleteCoord3D(ppos);
+  deleteCoord3D(pvel);
 
   return 0;
 }
