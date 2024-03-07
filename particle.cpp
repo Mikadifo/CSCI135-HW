@@ -49,9 +49,9 @@ Coord3D getPosition(Particle *p) { return (*p).pos; }
 
 // update particle's position after elapsed time dt
 void move(Particle *p, double dt) {
-  (*p).pos.x = (*p).pos.x + (*p).pos.x * dt;
-  (*p).pos.y = (*p).pos.y + (*p).pos.y * dt;
-  (*p).pos.z = (*p).pos.z + (*p).pos.z * dt;
+  (*p).pos.x = (*p).pos.x + (*p).vel.x * dt;
+  (*p).pos.y = (*p).pos.y + (*p).vel.y * dt;
+  (*p).pos.z = (*p).pos.z + (*p).vel.z * dt;
 }
 
 // delete all memory allocated for the particle passed by pointer
