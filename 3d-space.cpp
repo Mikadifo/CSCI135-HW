@@ -4,8 +4,8 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 9 C
 
-This program calculates the new position of a 3d point given a initial pos,
-velocity and time
+This program creates coordinates dinamically and calculates their new position
+in a given time
 */
 
 #include <cmath>
