@@ -62,7 +62,7 @@ void printTimeSlot(TimeSlot ts) {
   line += " (" + to_string(ts.movie.duration) + " min)";
   line += " [starts at " + to_string(ts.startTime.h) + ":" +
           to_string(ts.startTime.m);
-  line += ", end by " + to_string(endsBy.h) + ":" + to_string(endsBy.m);
+  line += ", ends by " + to_string(endsBy.h) + ":" + to_string(endsBy.m) + "]";
 
   cout << line << endl;
 }
