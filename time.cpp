@@ -4,7 +4,8 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 10 B
 
-This
+This program asks the users for a time and how many minutes extra will be added
+to the time and return a new moment of time
 */
 
 #include <iostream>
