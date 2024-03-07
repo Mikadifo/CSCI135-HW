@@ -87,16 +87,16 @@ bool timeOverlap(TimeSlot ts1, TimeSlot ts2) {
 }
 
 int main() {
-  Movie movie1 = {"Back to the Future", COMEDY, 116};
-  Movie movie2 = {"Black Panther", ACTION, 134};
+  Movie movie1 = {"Back to the Future", COMEDY, 180};
+  Movie movie2 = {"Black Panther", ACTION, 63};
 
-  TimeSlot morning = {movie1, {9, 15}};
-  TimeSlot evening = {movie2, {11, 0}};
+  TimeSlot morning = {movie1, {10, 30}};
+  TimeSlot evening = {movie2, {10, 30}};
 
   printTimeSlot(morning);
   printTimeSlot(evening);
 
-  cout << timeOverlap(morning, evening);
+  cout << (timeOverlap(morning, evening) ? "Overlap" : "Free");
 
   return 0;
 }
