@@ -23,7 +23,7 @@ public:
     displayName = "";
   };
   string getUsername() { return username; };
-  string getFullName() { return displayName + " (" + username + ")"; }
+  string getFullName() { return displayName + " (@" + username + ")"; }
   void setDisplayName(string displayName) { displayName = displayName; };
 };
 
