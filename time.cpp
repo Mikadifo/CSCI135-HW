@@ -59,7 +59,7 @@ Time addMinutes(Time time0, int min) {
 void printTimeSlot(TimeSlot ts) {
   Time endsBy = addMinutes(ts.startTime, ts.movie.duration);
   string line = ts.movie.title + " " + genreStrings[ts.movie.genre];
-  line += " (" + to_string(ts.movie.duration) + ")";
+  line += " (" + to_string(ts.movie.duration) + " min)";
   line += " [starts at " + to_string(ts.startTime.h) + ":" +
           to_string(ts.startTime.m);
   line += ", end by " + to_string(endsBy.h) + ":" + to_string(endsBy.m);
