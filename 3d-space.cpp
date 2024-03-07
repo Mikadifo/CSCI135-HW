@@ -2,7 +2,7 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 9 C
+Assignment: Lab 9 E
 
 This program creates coordinates dinamically and calculates their new position
 in a given time
