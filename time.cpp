@@ -2,9 +2,9 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 10 D
+Assignment: Lab 10 E
 
-This program schedules a given movie right after the end of the last time slot
+This program checks whether a given movie time slot overlaps with another
 */
 
 #include <iostream>
@@ -76,14 +76,22 @@ TimeSlot scheduleAfter(TimeSlot ts, Movie nexMovie) {
   return newTimeSlot;
 }
 
+// returns true if the two time slots overlap, otherwise return false
+bool timeOverlap(TimeSlot ts1, TimeSlot ts2) {
+  return minutesUntil(ts1.startTime, ts2.startTime) < ts1.movie.duration;
+}
+
 int main() {
   Movie movie1 = {"Back to the Future", COMEDY, 116};
   Movie movie2 = {"Black Panther", ACTION, 134};
 
   TimeSlot morning = {movie1, {9, 15}};
+  TimeSlot evening = {movie2, {11, 0}};
 
   printTimeSlot(morning);
-  printTimeSlot(scheduleAfter(morning, movie2));
+  printTimeSlot(evening);
+
+  cout << timeOverlap(morning, evening);
 
   return 0;
 }
