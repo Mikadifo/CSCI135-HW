@@ -4,7 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 10 A
 
-This program uses a Time class to calculate interval of times in minutes
+This program uses a Time class to calculate interval of moments in minutes
 */
 
 #include <iostream>
@@ -16,8 +16,10 @@ public:
   int m;
 };
 
+// returns the number of minutes from 0:00AM until time
 int minutesSinceMidnight(Time time) { return time.h * 60 + time.m; }
 
+// returns how many minutes separate the two moments
 int minutesUntil(Time earlier, Time later) {
   return minutesSinceMidnight(later) - minutesSinceMidnight(earlier);
 }
