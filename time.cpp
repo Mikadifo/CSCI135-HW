@@ -2,9 +2,9 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 10 A
+Assignment: Lab 10 B
 
-This program uses a Time class to calculate interval of moments in minutes
+This
 */
 
 #include <iostream>
@@ -24,21 +24,28 @@ int minutesUntil(Time earlier, Time later) {
   return minutesSinceMidnight(later) - minutesSinceMidnight(earlier);
 }
 
+// returns a new moment of time that is min minutes after time0
+Time addMinutes(Time time0, int min) {
+  int hoursExtra = min / 60;
+  Time time;
+  time.h = time0.h + hoursExtra;
+  time.m = time0.m + min - 60 * hoursExtra;
+
+  return time;
+}
+
 int main() {
-  int h, m;
+  int h, m, mins;
 
-  cout << "Enter first time: ";
+  cout << "Enter time: ";
   cin >> h >> m;
-  Time time1 = {h, m};
+  cout << "Enter extra minutes: ";
+  cin >> mins;
 
-  cout << "Enter first time: ";
-  cin >> h >> m;
-  Time time2 = {h, m};
+  Time time = {h, m};
+  time = addMinutes(time, mins);
 
-  cout << "These moments of time are " << minutesSinceMidnight(time1) << "and "
-       << minutesSinceMidnight(time2) << " minutes after midnight" << endl;
-  cout << "The interval between them is " << minutesUntil(time1, time2)
-       << " minutes" << endl;
+  cout << "New Time: " << time.h << ":" << time.m << endl;
 
   return 0;
 }
