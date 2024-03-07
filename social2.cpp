@@ -46,7 +46,6 @@ public:
   Network() { numUsers = 0; }
   bool addUser(string username, string displayName) {
     for (Profile profile : profiles) {
-      cout << profile.getUsername();
       if (profile.getUsername() == username) {
         return false;
       }
