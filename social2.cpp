@@ -45,10 +45,8 @@ private:
 public:
   Network() { numUsers = 0; }
   bool addUser(string username, string displayName) {
-    for (Profile profile : profiles) {
-      if (profile.getUsername() == username) {
-        return false;
-      }
+    if (findID(username) > 0 || numUsers >= MAX_USERS) {
+      return false;
     }
     profiles[numUsers] = Profile(username, displayName);
     numUsers++;
