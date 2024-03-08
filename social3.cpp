@@ -34,8 +34,11 @@ private:
   int numUsers;
   Profile profiles[MAX_USERS];
   bool following[MAX_USERS][MAX_USERS];
+
+  // Returns user ID (index in the 'profiles' array) by their username
+  // (or -1 if username is not found)
   int findID(string username) {
-    for (int i = 0; i < sizeof(profiles); i++) {
+    for (int i = 0; i < numUsers; i++) {
       if (profiles[i].getUsername() == username) {
         return i;
       }
@@ -53,17 +56,19 @@ public:
       }
     }
   }
+  // Attempts to sign up a new user with specified username and displayname
+  // return true if the operation was successful, otherwise return false
   bool addUser(string username, string displayName) {
-    for (Profile profile : profiles) {
-      if (profile.getUsername() == username) {
-        return false;
-      }
+    if (findID(username) == -1 && numUsers < MAX_USERS) {
+      profiles[numUsers] = Profile(username, displayName);
+      numUsers++;
+      return true;
     }
-    profiles[numUsers] = Profile(username, displayName);
-    numUsers++;
 
-    return true;
+    return false;
   }
+  // Make 'usrn1' follow 'usrn2' (if both usernames are in the network).
+  // return true if success (if both usernames exist), otherwise return false
   bool follow(string username1, string username2) {
     int user1Id = findID(username1);
     int user2Id = findID(username2);
@@ -75,6 +80,7 @@ public:
 
     return false;
   }
+  // Print Dot file (graphical representation of the network)
   void printDot() {
     string graph = "digraph {\n";
     for (int i = 0; i < numUsers; i++) {
@@ -124,6 +130,4 @@ int main() {
   nw.follow("mario2", "luigi");
 
   nw.printDot();
-
-  return 0;
 }
