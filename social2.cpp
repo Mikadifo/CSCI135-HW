@@ -72,6 +72,4 @@ int main() {
          << endl; // true (1)
 
   cout << nw.addUser("yoshi", "Yoshi") << endl; // false (0)
-
-  return 0;
 }
