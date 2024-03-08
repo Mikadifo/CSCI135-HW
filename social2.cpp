@@ -33,7 +33,7 @@ private:
   int numUsers;
   Profile profiles[MAX_USERS];
   int findID(string username) {
-    for (int i = 0; i < sizeof(profiles); i++) {
+    for (int i = 0; i < numUsers; i++) {
       if (profiles[i].getUsername() == username) {
         return i;
       }
@@ -45,13 +45,13 @@ private:
 public:
   Network() { numUsers = 0; }
   bool addUser(string username, string displayName) {
-    if (findID(username) > 0 || numUsers >= MAX_USERS) {
-      return false;
+    if (findID(username) == -1 && numUsers < MAX_USERS) {
+      profiles[numUsers] = Profile(username, displayName);
+      numUsers++;
+      return true;
     }
-    profiles[numUsers] = Profile(username, displayName);
-    numUsers++;
 
-    return true;
+    return false;
   }
 };
 
