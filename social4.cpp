@@ -23,6 +23,7 @@ public:
     displayName = "";
   };
   string getUsername() { return username; };
+  // returns the full name in the format: displayName (@username)
   string getFullName() { return displayName + " (@" + username + ")"; }
   void setDisplayName(string displayName) { this->displayName = displayName; };
 };
