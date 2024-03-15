@@ -105,7 +105,7 @@ void MemoryGame::display() const {
     if (values[i] == "") {
       cout << setw(5) << "|";
     } else {
-      cout << setw(2) << values[i] << "|";
+      cout << setw(5) << values[i] << "|";
     }
   }
   cout << endl;
