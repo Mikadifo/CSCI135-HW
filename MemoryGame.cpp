@@ -1,5 +1,7 @@
 #include "MemoryGame.hpp"
 #include <cstdlib>
+#include <iomanip>
+#include <iostream>
 #include <string>
 #include <utility>
 
@@ -81,6 +83,21 @@ void MemoryGame::randomize() {
   }
 }
 
+void printSeparatedLine(int size) {
+  cout << "+"; // the first +
+  // draw -----+ for (size) many times
+  for (int i = 0; i < size; i++)
+    cout << "-----+";
+  cout << endl;
+}
+
 void MemoryGame::display() const {
-  // TODO: placeholder, do not need to implement in Task A
+  cout << " ";
+  for (int i = 0; i < numSlots; i++)
+    cout << setw(3) << i << setw(3) << " ";
+  // setw(3) before i means i occupies 3-character,
+  // For example, if i has only two digits,
+  // then pad a space to its left.
+  cout << endl;
+  printSeparatedLine(numSlots);
 }
