@@ -91,13 +91,4 @@ void printSeparatedLine(int size) {
   cout << endl;
 }
 
-void MemoryGame::display() const {
-  cout << " ";
-  for (int i = 0; i < numSlots; i++)
-    cout << setw(3) << i << setw(3) << " ";
-  // setw(3) before i means i occupies 3-character,
-  // For example, if i has only two digits,
-  // then pad a space to its left.
-  cout << endl;
-  printSeparatedLine(numSlots);
-}
+void MemoryGame::display() const {}
