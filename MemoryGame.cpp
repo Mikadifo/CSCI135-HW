@@ -1,6 +1,7 @@
 #include "MemoryGame.hpp"
 #include <cstdlib>
 #include <string>
+#include <utility>
 
 MemoryGame::MemoryGame() : MemoryGame(3, 8) {}
 
@@ -70,7 +71,14 @@ MemoryGame::~MemoryGame() {
 }
 
 void MemoryGame::randomize() {
-  // TODO: placeholder, do not need to implement in Task A
+  int size = numSlots;
+  int randomIndex;
+
+  while (size > 1) {
+    randomIndex = rand() % size;
+    swap(values[randomIndex], values[size - 1]);
+    size--;
+  }
 }
 
 void MemoryGame::display() const {
