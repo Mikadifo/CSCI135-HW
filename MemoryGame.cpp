@@ -100,6 +100,7 @@ void MemoryGame::display() const {
   // then pad a space to its left.
   cout << endl;
   printSeparatedLine(numSlots);
+  cout << " ";
   for (int i = 0; i < numSlots; i++) {
     if (values[i] == "") {
       cout << setw(5) << "|";
