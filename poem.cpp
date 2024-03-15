@@ -22,7 +22,7 @@ int main() {
     p = createAPoemDynamically();
 
     // assume that the poem p is not needed at this point
-    delete[] p;
+    delete p;
     p = nullptr;
   }
 
