@@ -1,6 +1,5 @@
 #ifndef _MEMORY_GAME
 #define _MEMORY_GAME
-#include <ctime>
 #include <string>
 
 using namespace std;

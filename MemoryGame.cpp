@@ -63,9 +63,9 @@ MemoryGame::MemoryGame(string *words, int size, int numSlots) {
 }
 
 MemoryGame::~MemoryGame() {
-  delete values;
+  delete[] values;
   values = nullptr;
-  delete bShown;
+  delete[] bShown;
   bShown = nullptr;
 }
 
