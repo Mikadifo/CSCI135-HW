@@ -22,8 +22,8 @@ int main() {
     p = createAPoemDynamically();
 
     // assume that the poem p is not needed at this point
-    delete p;
-    p = NULL;
+    delete[] p;
+    p = nullptr;
   }
 
   return 0;
