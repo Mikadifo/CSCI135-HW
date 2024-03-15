@@ -107,5 +107,6 @@ void MemoryGame::display() const {
       cout << setw(2) << values[i] << " ";
     }
   }
+  cout << endl;
   printSeparatedLine(numSlots);
 }
