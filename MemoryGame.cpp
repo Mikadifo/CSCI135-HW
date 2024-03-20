@@ -102,7 +102,7 @@ void MemoryGame::display() const {
   printSeparatedLine(numSlots);
   cout << "|";
   for (int i = 0; i < numSlots; i++) {
-    if (bShown) {
+    if (bShown[i]) {
       if (values[i] == "") {
         cout << setw(6) << "|";
       } else {
