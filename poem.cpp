@@ -18,14 +18,14 @@ string *createAPoemDynamically() {
 }
 
 int main() {
-  string *p;
   while (true) {
+    string *p;
     p = createAPoemDynamically();
 
     // assume that the poem p is not needed at this point
     delete p;
+    p = nullptr;
   }
-  p = nullptr;
 
   return 0;
 }
