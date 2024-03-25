@@ -1,12 +1,11 @@
-// #ifndef _SWITCH
-#define _SWITCH
+// #ifndef _CIRCUIT
+#define _CIRCUIT
 #include <string>
 
 using namespace std;
 
-class Switch {
+class Circuit {
 public:
-  Switch();
   int get_first_switch_state();
   int get_second_switch_state();
   int get_lamp_state();
@@ -14,7 +13,7 @@ public:
   void toggle_second_switch();
 
 private:
-  bool first_switch;
-  bool second_switch;
-  bool lamp_state;
+  int first_switch = 0;
+  int second_switch = 0;
+  int lamp_state = 0;
 };
