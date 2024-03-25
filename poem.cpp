@@ -13,7 +13,6 @@ using namespace std;
 string *createAPoemDynamically() {
   string *p = new string;
   *p = "Roses are red, violets are blue";
-
   return p;
 }
 
