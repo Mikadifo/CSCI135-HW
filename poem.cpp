@@ -24,6 +24,4 @@ int main() {
     // assume that the poem p is not needed at this point
     delete p;
   }
-
-  return 0;
 }
