@@ -115,3 +115,58 @@ void MemoryGame::display() const {
   cout << endl;
   printSeparatedLine(numSlots);
 }
+
+int MemoryGame::input() const {
+  int userInput;
+  bool inputOutOfRange, cardFlipped;
+
+  cout << "Enter a unfipped card in [0, " << numSlots - 1 << "]: ";
+  cin >> userInput;
+
+  inputOutOfRange = userInput < 0 || userInput >= numSlots;
+  cardFlipped = bShown[userInput];
+
+  while (inputOutOfRange || cardFlipped) {
+    if (inputOutOfRange) {
+      cout << "input is not in [0, " << numSlots - 1 << "]. Re-enter: ";
+      cin >> userInput;
+    } else if (cardFlipped) {
+      cout << "The card is flipped already. Re-enter: ";
+      cin >> userInput;
+    }
+
+    inputOutOfRange = userInput < 0 || userInput >= numSlots;
+    cardFlipped = bShown[userInput];
+  }
+
+  return userInput;
+}
+
+void MemoryGame::play() {
+  int round = 1, lastInput, newInput, pairs = 0;
+  bool isGuessing = false;
+
+  randomize();
+  display();
+  while (pairs < numPairs) {
+    cout << pairs << endl;
+    cout << "Round " << round << ":" << endl;
+    newInput = input();
+
+    if (!isGuessing) {
+      bShown[newInput] = true;
+    } else if (values[lastInput] == values[newInput]) {
+      cout << values[lastInput] << " -> " << values[newInput] << endl;
+      bShown[newInput] = true;
+      pairs++;
+    } else {
+      bShown[lastInput] = false;
+    }
+    isGuessing = !isGuessing;
+    round++;
+    lastInput = newInput;
+    display();
+  }
+
+  cout << "Congratulations! Found out all pairs in " << round - 1 << " rounds";
+}

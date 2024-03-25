@@ -1,21 +1,17 @@
 #include "MemoryGame.hpp"
-#include <iostream>
-#include <string>
 
 using namespace std;
 
 int main() {
   MemoryGame game;
+  game.play();
   game.~MemoryGame();
 
-  MemoryGame game2(3, 9);
-  game2.~MemoryGame();
-
-  string words[] = {"Hello", "Hi", "Hey"};
+  string words[] = {"Hello", "Hi"};
   int size = sizeof(words) / sizeof(words[0]);
-
-  MemoryGame game3(words, 3, 9);
-  game3.~MemoryGame();
+  MemoryGame game2(words, size, 7);
+  game.play();
+  game2.~MemoryGame();
 
   return 0;
 }
