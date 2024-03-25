@@ -149,14 +149,12 @@ void MemoryGame::play() {
   randomize();
   display();
   while (pairs < numPairs) {
-    cout << pairs << endl;
     cout << "Round " << round << ":" << endl;
     newInput = input();
 
     if (!isGuessing) {
       bShown[newInput] = true;
     } else if (values[lastInput] == values[newInput]) {
-      cout << values[lastInput] << " -> " << values[newInput] << endl;
       bShown[newInput] = true;
       pairs++;
     } else {
