@@ -1,3 +1,11 @@
+/*
+Author: Michael Padilla
+Course: CSCI-135
+Instructor: Tong Yi
+Assignment: Homework E9.3
+
+Simulates a highway lapm with siwtches at both sides
+*/
 #include "Circuit.hpp"
 
 int Circuit::get_first_switch_state() { return first_switch; };
