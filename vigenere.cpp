@@ -39,9 +39,9 @@ string encryptVigenere(string plainText, string keyword) {
   for (char character : plainText) {
     if (isalpha(character)) {
       if (!keyword[keywordIndex]) {
-        keywordIndex -= keyword.length();
+        keywordIndex = 0;
       }
-      int rshift = (int)keyword[keywordIndex] - a_ASCII;
+      int rshift = keyword[keywordIndex] - 'a';
       keywordIndex++;
 
       encryptedText += shiftChar(character, rshift);
