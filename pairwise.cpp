@@ -13,7 +13,7 @@ using namespace std;
 
 // This function returns a new vector with the sum of the elements at the same
 // index of the 2 given arrays
-vector<int> sumPairWise(const vector<int> &v1, const vector<int> &v2) {
+vector<int> sumPairWise(vector<int> &v1, vector<int> &v2) {
   vector<int> sum;
   int size = v1.size() >= v2.size() ? v1.size() : v2.size();
 
