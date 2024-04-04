@@ -18,11 +18,11 @@ vector<int> sumPairWise(vector<int> &v1, vector<int> &v2) {
   int size = v1.size() >= v2.size() ? v1.size() : v2.size();
 
   for (int i = 0; i < size; i++) {
-    if (i > v1.size() - 1) {
+    if (i >= v1.size()) {
       sum.push_back(v2.at(i));
       continue;
     }
-    if (i > v2.size() - 1) {
+    if (i >= v2.size()) {
       sum.push_back(v1.at(i));
       continue;
     }
@@ -34,7 +34,7 @@ vector<int> sumPairWise(vector<int> &v1, vector<int> &v2) {
 
 int main() {
   vector<int> v1{1, 2, 3};
-  vector<int> v2{4, 5};
+  vector<int> v2{5, 6};
   vector<int> sum = sumPairWise(v1, v2);
 
   for (int num : sum) {
