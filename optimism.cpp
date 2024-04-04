@@ -12,7 +12,7 @@ Assignment: Lab 12B
 using namespace std;
 
 // This function returns a vector wiht only positive numbers from a given vector
-vector<int> goodVibes(vector<int> &v) {
+vector<int> goodVibes(const vector<int> v) {
   vector<int> numbers;
 
   for (int number : v) {
