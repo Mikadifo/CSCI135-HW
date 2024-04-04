@@ -4,6 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 12A
 
+This programs calls a function to create a vector of numbers from 0 to n-1
 */
 
 #include <iostream>
