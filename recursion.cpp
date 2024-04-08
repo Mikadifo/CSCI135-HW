@@ -2,9 +2,9 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 13 B
+Assignment: Lab 13 C
 
-This program sums all the numbers within a given range
+This program TODO
 */
 
 #include <iostream>
