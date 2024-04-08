@@ -4,26 +4,17 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 13 C
 
-This program TODO
+This program is given a array and returns the sum of its elements
 */
 
 #include <iostream>
 using namespace std;
 
-int sumRange(int *arr, int left, int right) {
-  // TODO: Update validations...
-  if (right - left < 0)
+int sumArray(int *arr, int size) {
+  if (size <= 0)
     return 0;
 
-  if (right - left == 0)
-    return left;
-
-  return arr[left] + sumRange(arr, left + 1, right);
-}
-
-int sumArray(int *arr, int size) {
-  // TODO: Check how to do it without a helper function
-  return sumRange(arr, 0, size - 1);
+  return arr[size - 1] + sumArray(arr, size - 1);
 }
 
 int sumRange(int left, int right) {
