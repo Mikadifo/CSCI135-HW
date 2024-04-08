@@ -11,10 +11,10 @@ This program prints numbers in a range using recursion
 using namespace std;
 
 void printRange(int left, int right) {
-  if (left < right)
+  if (left < right) {
     cout << left << " ";
-
-  printRange(left - 1, right);
+    printRange(left - 1, right);
+  }
 }
 
 int main() {
