@@ -11,7 +11,10 @@ This program sums all the numbers within a given range
 using namespace std;
 
 int sumRange(int left, int right) {
-  if (right - left <= 0)
+  if (right - left < 0)
+    return 0;
+
+  if (right - left == 0)
     return left;
 
   return left + sumRange(left + 1, right);
@@ -30,6 +33,9 @@ int main() {
 
   int y = sumRange(-2, 10);
   cout << "That is " << y << endl; // 52
-                                   //
+
+  int z = sumRange(7, 3);
+  cout << "That is " << z << endl; // 0
+
   return 0;
 }
