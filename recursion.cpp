@@ -11,6 +11,7 @@ This program TODO
 using namespace std;
 
 int sumRange(int *arr, int left, int right) {
+  // TODO: Update validations...
   if (right - left < 0)
     return 0;
 
@@ -20,7 +21,10 @@ int sumRange(int *arr, int left, int right) {
   return arr[left] + sumRange(arr, left + 1, right);
 }
 
-int sumArray(int *arr, int size) { return sumRange(arr, 0, size - 1); }
+int sumArray(int *arr, int size) {
+  // TODO: Check how to do it without a helper function
+  return sumRange(arr, 0, size - 1);
+}
 
 int sumRange(int left, int right) {
   if (right - left < 0)
