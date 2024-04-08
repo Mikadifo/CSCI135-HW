@@ -2,14 +2,42 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 13 D
+Assignment: Lab 13 E
 
-This program checks if a given string is alphanumeric using recursion
+This program checks if a given string is a sequence of nested parenthesis
 */
 
 #include <cctype>
 #include <iostream>
 using namespace std;
+
+int nestedParens(string s, int counter) {
+  cout << s << counter << endl;
+  if (s.length() == 0) {
+    return 0;
+  }
+
+  if (s[0] == '(')
+    counter++;
+  if (s[0] == ')')
+    counter--;
+
+  return counter + nestedParens(s.substr(1), counter);
+}
+
+bool nestedParens(string s) {
+  if (s.length() == 0)
+    return true;
+
+  if (s[0] != '(')
+    return false;
+
+  // if () {}
+
+  int total = nestedParens(s, 0);
+  cout << endl << total << endl;
+  return true;
+}
 
 bool isAlphanumeric(string s) {
   if (s.length() == 0)
@@ -46,9 +74,15 @@ void printRange(int left, int right) {
 }
 
 int main() {
-  cout << isAlphanumeric("ABCD") << endl;        // true (1)
-  cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
-  cout << isAlphanumeric("KLMN 8-7-6") << endl;  // false (0)
+  nestedParens("((()))");
+  // cout << nestedParens("((()))") << endl; // true (1)
+  // cout << nestedParens("()") << endl;     // true (1)
+  // cout << nestedParens("") << endl;       // true (1)
+
+  // cout << nestedParens("(((") << endl;   // false (0)
+  // cout << nestedParens("(()") << endl;   // false (0)
+  // cout << nestedParens(")(") << endl;    // false (0)
+  // cout << nestedParens("a(b)c") << endl; // false (0)
 
   return 0;
 }
