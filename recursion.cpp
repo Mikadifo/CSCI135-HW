@@ -12,17 +12,15 @@ This program checks if a given string is a sequence of nested parenthesis
 using namespace std;
 
 int nestedParens(string s, int counter) {
-  cout << s << counter << endl;
-  if (s.length() == 0) {
-    return 0;
-  }
+  if (s.length() == 0)
+    return counter;
 
   if (s[0] == '(')
     counter++;
   if (s[0] == ')')
     counter--;
 
-  return counter + nestedParens(s.substr(1), counter);
+  return nestedParens(s.substr(1), counter);
 }
 
 bool nestedParens(string s) {
@@ -32,11 +30,7 @@ bool nestedParens(string s) {
   if (s[0] != '(')
     return false;
 
-  // if () {}
-
-  int total = nestedParens(s, 0);
-  cout << endl << total << endl;
-  return true;
+  return nestedParens(s, 0) == 0;
 }
 
 bool isAlphanumeric(string s) {
@@ -75,14 +69,14 @@ void printRange(int left, int right) {
 
 int main() {
   nestedParens("((()))");
-  // cout << nestedParens("((()))") << endl; // true (1)
-  // cout << nestedParens("()") << endl;     // true (1)
-  // cout << nestedParens("") << endl;       // true (1)
+  cout << nestedParens("((()))") << endl; // true (1)
+  cout << nestedParens("()") << endl;     // true (1)
+  cout << nestedParens("") << endl;       // true (1)
 
-  // cout << nestedParens("(((") << endl;   // false (0)
-  // cout << nestedParens("(()") << endl;   // false (0)
-  // cout << nestedParens(")(") << endl;    // false (0)
-  // cout << nestedParens("a(b)c") << endl; // false (0)
+  cout << nestedParens("(((") << endl;   // false (0)
+  cout << nestedParens("(()") << endl;   // false (0)
+  cout << nestedParens(")(") << endl;    // false (0)
+  cout << nestedParens("a(b)c") << endl; // false (0)
 
   return 0;
 }
