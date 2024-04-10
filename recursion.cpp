@@ -12,6 +12,9 @@ This program checks if a given string is a sequence of nested parenthesis
 using namespace std;
 
 int nestedParens(string s, int counter) {
+  if (s[0] != '(' || s[0] != ')') // TODO: Wrong
+    return 1;
+
   if (s.length() == 0)
     return counter;
 
@@ -80,6 +83,7 @@ int main() {
   cout << nestedParens(")(") << endl;     // false (0)
   cout << nestedParens("a(b)c") << endl;  // false (0)
   cout << nestedParens("(()())") << endl; // false (0)
+  cout << nestedParens("((a))") << endl;  // false (0)
 
   return 0;
 }
