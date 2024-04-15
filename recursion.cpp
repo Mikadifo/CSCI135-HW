@@ -4,7 +4,8 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 13 F
 
-This program TODO
+This program checks if a collection of paints can be evenly divided by 2 based
+on their price
 */
 
 #include <cctype>
@@ -74,14 +75,42 @@ void printRange(int left, int right) {
   }
 }
 
-bool divisible(int *prices, int size) {
-  // TODO
+bool divisible(int *prices, int size, int i, int left, int right, int sum) {
+  if (i == size) {
+    return left == right;
+  }
 
-  return true;
+  if (left > sum || right > sum) {
+    return false;
+  }
+
+  if (divisible(prices, size, i + 1, left + prices[i], right, sum)) {
+    return true;
+  }
+
+  if (divisible(prices, size, i + 1, left, right + prices[i], sum)) {
+    return true;
+  }
+
+  return false;
+}
+
+bool divisible(int *prices, int size) {
+  int sum = 0;
+
+  for (int i = 0; i < size; i++) {
+    sum += prices[i];
+  }
+
+  return divisible(prices, size, 0, 0, 0, sum / 2);
 }
 
 int main() {
-  // TODO
+  int prices[] = {10, 15, 12, 18, 19, 17, 13, 35, 33};
+
+  bool result = divisible(prices, sizeof(prices) / sizeof(int));
+
+  cout << result << endl;
 
   return 0;
 }
