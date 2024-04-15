@@ -2,9 +2,9 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 13 E
+Assignment: Lab 13 F
 
-This program checks if a given string is a sequence of nested parenthesis
+This program TODO
 */
 
 #include <cctype>
@@ -74,18 +74,14 @@ void printRange(int left, int right) {
   }
 }
 
-int main() {
-  nestedParens("((()))");
-  cout << nestedParens("((()))") << endl; // true (1)
-  cout << nestedParens("()") << endl;     // true (1)
-  cout << nestedParens("") << endl;       // true (1)
+bool divisible(int *prices, int size) {
+  // TODO
 
-  cout << nestedParens("(((") << endl;    // false (0)
-  cout << nestedParens("(()") << endl;    // false (0)
-  cout << nestedParens(")(") << endl;     // false (0)
-  cout << nestedParens("a(b)c") << endl;  // false (0)
-  cout << nestedParens("(()())") << endl; // false (0)
-  cout << nestedParens("((a))") << endl;  // false (0)
+  return true;
+}
+
+int main() {
+  // TODO
 
   return 0;
 }
