@@ -12,18 +12,20 @@ This program checks if a given string is a sequence of nested parenthesis
 using namespace std;
 
 int nestedParens(string s, int counter) {
-  if (s[0] != '(' || s[0] != ')') // TODO: Wrong
-    return 1;
-
   if (s.length() == 0)
     return counter;
 
-  if (s[0] == '(')
-    counter++;
-  if (s[0] == ')' && s[1] == '(')
+  if (s[0] == ')' && s[1] == '(') {
     return 1;
-  if (s[0] == ')')
+  }
+
+  if (s[0] == '(') {
+    counter++;
+  } else if (s[0] == ')') {
     counter--;
+  } else {
+    return 1;
+  }
 
   return nestedParens(s.substr(1), counter);
 }
