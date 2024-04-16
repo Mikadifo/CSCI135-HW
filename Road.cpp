@@ -18,11 +18,11 @@ Road::Road() : Road(10) {}
  * @param int length
  */
 Road::Road(int length) {
+  blocks = std::vector<char>{};
+
   if (length < 0) {
     return;
   }
-
-  blocks = std::vector<char>{};
 
   for (int i = 0; i < length; i++) {
     blocks.push_back(' ');
