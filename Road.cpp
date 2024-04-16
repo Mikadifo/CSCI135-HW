@@ -12,7 +12,7 @@ Assignment: Project 2C
 #include <vector>
 
 // Default constructor
-Road::Road() : Road(60) {}
+Road::Road() : Road(70) {}
 
 /*
  * @param int length
@@ -21,7 +21,7 @@ Road::Road(int length) {
   blocks = std::vector<char>{};
 
   if (length < 0) {
-    length = 60;
+    length = 70;
   }
 
   for (int i = 0; i < length; i++) {
