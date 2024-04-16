@@ -9,6 +9,7 @@ Assignment: Project 2A
 
 #include "Hare.hpp"
 #include <cstdlib>
+#include <ctime>
 
 // Default constructor
 Hare::Hare() {
@@ -52,6 +53,7 @@ void Hare::setPosition(int position) { this->position = position; }
  * It also checks if the new position is within the range of the road(0 to 9).
  */
 void Hare::move() {
+  srand(time(0));
   int randomNumber = rand() % 10;
   int movement = patterns[randomNumber];
 

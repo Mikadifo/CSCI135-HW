@@ -9,6 +9,7 @@ Assignment: Project 2B
 
 #include "Tortoise.hpp"
 #include <cstdlib>
+#include <ctime>
 
 // Default constructor
 Tortoise::Tortoise() {
@@ -52,6 +53,7 @@ void Tortoise::setPosition(int position) { this->position = position; }
  * It also checks if the new position is within the range of the road(0 to 9).
  */
 void Tortoise::move() {
+  srand(time(0));
   int randomNumber = rand() % 10;
   int movement = patterns[randomNumber];
 
