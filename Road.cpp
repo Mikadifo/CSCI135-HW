@@ -21,7 +21,7 @@ Road::Road(int length) {
   blocks = std::vector<char>{};
 
   for (int i = 0; i < length; i++) {
-    blocks.push_back('_');
+    blocks.push_back(' ');
   }
 }
 
