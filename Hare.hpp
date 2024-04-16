@@ -17,7 +17,7 @@ public:
   int getPosition() const;
   void setPosition(int position);
 
-  // private:
+private:
   std::vector<int> patterns;
   int position;
 };
