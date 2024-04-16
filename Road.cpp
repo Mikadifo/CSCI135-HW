@@ -33,7 +33,16 @@ Road::Road(int length) {
  * @param int index
  * @param char ch
  */
-void Road::mark(int index, char ch) { blocks.at(index) = ch; }
+void Road::mark(int index, char ch) {
+  for (int i = 0; i < blocks.size(); i++) {
+    if (blocks.at(i) == ch) {
+      blocks.at(i) = ' ';
+      break;
+    }
+  }
+
+  blocks.at(index) = ch;
+}
 
 /*
  * Displays the current road

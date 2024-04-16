@@ -10,7 +10,7 @@ int main() {
   Competition race;
   race.play();
 
-  vector<int> harePattern{-3, 2, 0, 0, 6};
+  vector<int> harePattern{-3, 2, 0, 0, 6}; // need C++11 or above
   Hare hare(harePattern, 0);
 
   vector<int> torPattern{1, 1, 2, -2, 3};

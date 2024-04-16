@@ -4,7 +4,7 @@
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Project 2C
+Assignment: Project 2D
 */
 
 #include "Competition.hpp"
@@ -15,6 +15,7 @@ Assignment: Project 2C
 
 // Default constructor
 Competition::Competition() {
+  srand(time(NULL));
   rabbit = Hare{};
   tor = Tortoise{};
 }
@@ -35,12 +36,20 @@ void Competition::play() {
   int goal = lane.length() - 1;
   int step = 1;
 
-  while (step < 4) {
+  while (true) {
     rabbit.move();
     tor.move();
 
     int rabbitPos = rabbit.getPosition();
     int torPos = tor.getPosition();
+
+    if (rabbitPos >= lane.length() - 1) {
+      rabbitPos = lane.length() - 1;
+    }
+
+    if (torPos >= lane.length() - 1) {
+      torPos = lane.length() - 1;
+    }
 
     lane.mark(torPos, 'T');
     if (rabbitPos == torPos) {
