@@ -1,10 +1,10 @@
+// Defines constructors and methods in Hare.hpp
+
 /*
 Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Project 2A
-
-Defines constructors and methods in Hare.hpp
 */
 
 #include "Hare.hpp"
