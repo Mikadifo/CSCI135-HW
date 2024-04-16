@@ -61,6 +61,7 @@ int sumArray(int *arr, int size) {
   return arr[size - 1] + sumArray(arr, size - 1);
 }
 
+// Sums all numbers from the range [left - right]
 int sumRange(int left, int right) {
   if (right - left < 0)
     return 0;
