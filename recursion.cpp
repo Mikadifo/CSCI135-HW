@@ -3,15 +3,16 @@ Author: Michael Padilla
 Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab 13 F
-
-This program checks if a collection of paints can be evenly divided by 2 based
-on their price
 */
+
+// This program checks if a collection of paints can be evenly divided by 2
+// based on their price
 
 #include <cctype>
 #include <iostream>
 using namespace std;
 
+// Checks if the string only has nested parenthesis
 int nestedParens(string s, int counter) {
   if (s.length() == 0)
     return counter;
@@ -41,6 +42,7 @@ bool nestedParens(string s) {
   return nestedParens(s, 0) == 0;
 }
 
+// Checks if the string only contains alphanumeric characters
 bool isAlphanumeric(string s) {
   if (s.length() == 0)
     return true;
@@ -51,6 +53,7 @@ bool isAlphanumeric(string s) {
   return isAlphanumeric(s.substr(1));
 }
 
+// Sums all the elements in a given array
 int sumArray(int *arr, int size) {
   if (size <= 0)
     return 0;
@@ -75,20 +78,17 @@ void printRange(int left, int right) {
   }
 }
 
-bool divisible(int *prices, int size, int i, int left, int right, int sum) {
+// Checks if a array is divisible by exactly 2
+bool divisible(int *prices, int size, int i, int left, int right) {
   if (i == size) {
     return left == right;
   }
 
-  if (left > sum || right > sum) {
-    return false;
-  }
-
-  if (divisible(prices, size, i + 1, left + prices[i], right, sum)) {
+  if (divisible(prices, size, i + 1, left + prices[i], right)) {
     return true;
   }
 
-  if (divisible(prices, size, i + 1, left, right + prices[i], sum)) {
+  if (divisible(prices, size, i + 1, left, right + prices[i])) {
     return true;
   }
 
@@ -96,13 +96,7 @@ bool divisible(int *prices, int size, int i, int left, int right, int sum) {
 }
 
 bool divisible(int *prices, int size) {
-  int sum = 0;
-
-  for (int i = 0; i < size; i++) {
-    sum += prices[i];
-  }
-
-  return divisible(prices, size, 0, 0, 0, sum / 2);
+  return divisible(prices, size, 0, 0, 0);
 }
 
 int main() {
