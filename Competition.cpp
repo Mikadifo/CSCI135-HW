@@ -39,10 +39,18 @@ void Competition::play() {
     rabbit.move();
     tor.move();
 
-    std::cout << "round   " << round << ": ";
-
     int rabbitPos = rabbit.getPosition();
     int torPos = tor.getPosition();
+
+    if (rabbitPos < 0) {
+      rabbit.setPosition(0);
+      rabbitPos = 0;
+    }
+
+    if (torPos < 0) {
+      tor.setPosition(0);
+      torPos = 0;
+    }
 
     if (rabbitPos >= lane.length() - 1) {
       rabbitPos = lane.length() - 1;
@@ -52,25 +60,27 @@ void Competition::play() {
       torPos = lane.length() - 1;
     }
 
-    for (int i = 0; lane.length(); i++) {
+    for (int i = 0; i < lane.length(); i++) {
       lane.mark(i, ' ');
     }
 
+    std::cout << "round   " << round << ": ";
     lane.mark(torPos, 'T');
     if (rabbitPos == torPos) {
+      lane.display();
       std::cout << "Ouch! Tortoise bites hare." << std::endl;
     } else {
       lane.mark(rabbitPos, 'H');
+      lane.display();
     }
-    lane.display();
 
     if (rabbitPos == torPos && rabbitPos >= goal && torPos >= goal) {
-      std::cout << "Yuck. Hare wins." << std::endl;
+      std::cout << "It is a tie." << std::endl;
       return;
     }
 
     if (rabbitPos >= goal) {
-      std::cout << "It is a tie." << std::endl;
+      std::cout << "Yuck. Hare wins." << std::endl;
       return;
     }
 

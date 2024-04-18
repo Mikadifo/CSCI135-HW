@@ -54,8 +54,4 @@ void Tortoise::setPosition(int position) { this->position = position; }
 void Tortoise::move() {
   int randomNumber = rand() % patterns.size();
   position += patterns[randomNumber];
-
-  if (position < 0) {
-    position = 0;
-  }
 }

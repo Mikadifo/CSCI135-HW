@@ -3,14 +3,14 @@
 // name: Tong Yi
 // email: ty680@hunter.cuny.edu
 #include "Competition.hpp"
+#include <cstdlib>
 
 using namespace std;
 
 int main() {
-  Competition race;
-  race.play();
+  srand(2);
 
-  vector<int> harePattern{-3, 2, 0, 0, 6}; // need C++11 or above
+  vector<int> harePattern{-3, 2, 0, 0, 6};
   Hare hare(harePattern, 0);
 
   vector<int> torPattern{1, 1, 2, -2, 3};
