@@ -52,6 +52,10 @@ void Competition::play() {
       torPos = lane.length() - 1;
     }
 
+    for (int i = 0; lane.length(); i++) {
+      lane.mark(i, ' ');
+    }
+
     lane.mark(torPos, 'T');
     if (rabbitPos == torPos) {
       std::cout << "Ouch! Tortoise bites hare." << std::endl;
