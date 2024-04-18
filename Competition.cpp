@@ -33,11 +33,13 @@ Competition::Competition(Hare coney, Tortoise cooter, int length) {
 // Starts the competition and checks when either the Hare or the Tortoise win
 void Competition::play() {
   int goal = lane.length() - 1;
-  int step = 1;
+  int round = 1;
 
   while (true) {
     rabbit.move();
     tor.move();
+
+    std::cout << "round   " << round << ": ";
 
     int rabbitPos = rabbit.getPosition();
     int torPos = tor.getPosition();
@@ -73,6 +75,6 @@ void Competition::play() {
       return;
     }
 
-    step++;
+    round++;
   }
 }
