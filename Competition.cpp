@@ -15,7 +15,6 @@ Assignment: Project 2D
 
 // Default constructor
 Competition::Competition() {
-  srand(time(NULL));
   rabbit = Hare{};
   tor = Tortoise{};
 }
